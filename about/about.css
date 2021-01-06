@@ -1,6 +1,8 @@
 .names {
+  margin-top: -300px;
   color: white;
   text-align: center;
+  position: relative;
 }
 body {
   background-image: url("/home/aya/Desktop/javaproject/about/67b2a9ba5e85822f237caae92111e938.gif");
