@@ -1,0 +1,181 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box
+}
+
+body{
+  background: rgb(102,51,153);
+  background: radial-gradient(circle, rgba(102,51,153,1) 0%, rgba(209,35,197,1) 0%, rgba(102,51,153,1) 100%);
+  font-family: 'arcade';
+}
+
+@font-face {
+  font-family: 'arcade';
+  src: URL('../fonts/arcade.ttf') format('truetype');
+}
+
+h1{
+  margin: 50px auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap
+}
+
+h1 span{
+  padding: 5px;
+  font-size: 40px;
+}
+
+a{
+  color: inherit;
+  text-decoration: none
+}
+
+img{
+  max-width: 100%;
+  max-height: 100%
+}
+
+.pink{
+  color: #FC30AD;
+  text-shadow: 0 1px 0 #ccc,
+    0 2px 0 #FF76CB,
+    0 3px 0 #FF76CB,
+    0 4px 0 #FF76CB,
+    0 5px 0 #FF76CB,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
+}
+
+.fosdoki{
+  color: #24CABC;
+  text-shadow: 0 1px 0 #ccc,
+    0 2px 0 #54DED1,
+    0 3px 0 #54DED1,
+    0 4px 0 #54DED1,
+    0 5px 0 #54DED1,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
+}
+
+.orange{
+  color: #F8430E;
+  text-shadow: 0 1px 0 #ccc,
+    0 2px 0 #F6871E,
+    0 3px 0 #F6871E,
+    0 4px 0 #F6871E,
+    0 5px 0 #F6871E,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
+}
+
+.green{
+  color: #7DBD1E;
+  text-shadow: 0 1px 0 #ccc,
+    0 2px 0 #A7D244,
+    0 3px 0 #A7D244,
+    0 4px 0 #A7D244,
+    0 5px 0 #A7D244,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
+}
+
+.blue{
+  color: #2780D4;
+  text-shadow: 0 1px 0 #ccc,
+    0 2px 0 #152783,
+    0 3px 0 #152783,
+    0 4px 0 #152783,
+    0 5px 0 #152783,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
+}
+
+.red{
+  color: #AF0706;
+  text-shadow: 0 1px 0 #ccc,
+    0 2px 0 #D61E1E,
+    0 3px 0 #D61E1E,
+    0 4px 0 #D61E1E,
+    0 5px 0 #D61E1E,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
+}
+
+.container{
+  margin: 15px auto;
+  text-align: center;
+  width: 80%
+}
+
+.btn{
+  border: 2px dashed #60FBF7;
+  color: #60FBF7;
+  padding: 5px 10px;
+  background: none;
+  font-family: 'arcade';
+  font-size: 25px;
+}
+
+.btn:nth-of-type(2){
+  color: #9df121;
+  border-color: #9df121
+}
+
+.btn:nth-of-type(3){
+  color: #FFF;
+  border-color: #FFF
+}
+
+.btn span{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.arcade{
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  top: 10%;
+  right: 0;
+}
+
+.stick{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom: 5px;
+  left: 0
+}
