@@ -12,9 +12,10 @@ class Enemy{
     $element.className = "enemy";
     $container.appendChild($element);
 
-    const enemy = new Enemy(x, y, $element);
+    //const enemy = new Enemy(x, y, $element);
 
-    GAME_STATE.enemies.push(enemy); //array holds all the enemies
+    //GAME_STATE.enemies.push(enemy); //array holds all the enemies
+    GAME_STATE.enemies.push(this);
     setPosition($element, x, y);
   }
 
