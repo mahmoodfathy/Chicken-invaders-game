@@ -18,36 +18,10 @@ class Enemy{
     setPosition($element, x, y);
   }
 
-  update(dt, $container){
-    //we sin and cos to make enemies move in a circular way
-    const dx = Math.sin(GAME_STATE.lastTime / 1000.0) * 50;
-    const dy = Math.cos(GAME_STATE.lastTime / 1000.0) * 10;
-
-    const enemies = GAME_STATE.enemies;
-
-    for(let i = 0; i < enemies.length; i++){
-      const enemy = enemies[i];
-      const x = enemy.x + dx;
-      const y = enemy.y + dy;
-      setPosition(enemy.$element, x, y);
-
-      enemy.cooldown -= dt;//decrease cooldown time
-      if(enemy.cooldown <= 0){//check if the laser cooled down
-        createEnemyLaser($container, x, y);
-        //reset cooldown
-        enemy.cooldown = ENEMY_COOLDOWN;
-      }
-
-    }
-
-    //remove all dead enemies from the array
-    GAME_STATE.enemies = GAME_STATE.enemies.filter(e => !e.isDead);
-  }
-
   destroy($container, enemy){
     //$container.removeChild(enemy.$element);
 
-    $explosion = document.createElement("img");
+    const $explosion = document.createElement("img");
     $explosion.src = "img/laser-red-8.png";
     $explosion.className = "explosion";
     $explosion.style.transform = enemy.$element.style.transform;
@@ -65,3 +39,28 @@ class Enemy{
 };
 
 
+function updateEnemies(dt, $container){
+  //we sin and cos to make enemies move in a circular way
+  const dx = Math.sin(GAME_STATE.lastTime / 1000.0) * 50;
+  const dy = Math.cos(GAME_STATE.lastTime / 1000.0) * 10;
+
+  const enemies = GAME_STATE.enemies;
+
+  for(let i = 0; i < enemies.length; i++){
+    const enemy = enemies[i];
+    const x = enemy.x + dx;
+    const y = enemy.y + dy;
+    setPosition(enemy.$element, x, y);
+
+    enemy.cooldown -= dt;//decrease cooldown time
+    if(enemy.cooldown <= 0){//check if the laser cooled down
+      createEnemyLaser($container, x, y);
+      //reset cooldown
+      enemy.cooldown = ENEMY_COOLDOWN;
+    }
+
+  }
+
+  //remove all dead enemies from the array
+  GAME_STATE.enemies = GAME_STATE.enemies.filter(e => !e.isDead);
+}
