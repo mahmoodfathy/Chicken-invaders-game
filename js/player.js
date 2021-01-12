@@ -45,7 +45,7 @@ class Player{
         audio.play();
       }
 
-      Won(){
+      won(){
         return game.enemies.length === 0;
       }
 }
