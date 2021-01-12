@@ -1,8 +1,7 @@
 class Enemy{
-  constructor(x, y, $element){
+  constructor(x, y){
     this.x = x;
     this.y = y;
-    this.$element = $element;
     this.cooldown = rand(0.5, ENEMY_COOLDOWN); //random cooldown
   }
 
@@ -12,6 +11,7 @@ class Enemy{
     $element.className = "enemy";
     $container.appendChild($element);
 
+    this.$element = $element;
     //const enemy = new Enemy(x, y, $element);
 
     //GAME_STATE.enemies.push(enemy); //array holds all the enemies
