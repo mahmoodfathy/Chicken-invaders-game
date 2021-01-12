@@ -37,4 +37,15 @@ class Player{
       checkBoundries(playerX, min, max) {
           return playerX < min? min : (playerX > max ? max : playerX) 
       }
+
+      destroy(container, player) {
+        container.removeChild(player);
+        game.gameOver = true;
+        const audio = new Audio("sound/sfx-lose.ogg");
+        audio.play();
+      }
+
+      Won(){
+        return game.enemies.length === 0;
+      }
 }
