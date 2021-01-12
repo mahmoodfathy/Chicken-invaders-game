@@ -3,13 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/App.css" />
 
     <title>Game</title>
   </head>
   <body>
-    <script type="module" src="js/Helper.js"></script>
-    <script type="module" src="js/Game.js"></script>
+    <div class="row">
+      <!-- <img src="Images/Logo.png" /> -->
 
-    <script type="module" src="test.js"></script>
+      <h3>Instructions</h3>
+      <p>The aim is to eliminate All the chickens</p>
+      <img src="Images/chicken.png" />
+
+      <h4>You Can Control the Space-Ship With:</h4>
+      <div class="container">
+        <p class="up">Press UP Arrow key To Go Up</p>
+        <div class="key_button">&#8593;</div>
+      </div>
+      <div class="gif">
+        <img src="Images/arcade2.gif" />
+      </div>
+      <div class="container">
+        <p class="up">Press Down Arrow key To Go Down</p>
+        <div class="key_button">&#8595;</div>
+      </div>
+
+      <div class="container">
+        <p class="up">Press Left Arrow key To Go Left</p>
+        <div class="key_button">&#8592;</div>
+      </div>
+      <div class="container">
+        <p class="up">Press Right Arrow key To Go Right</p>
+        <div class="key_button">&#8594;</div>
+      </div>
+      <div class="container">
+        <p class="up">Press Space Arrow key To Fire</p>
+        <div class="key_button">&#8212;</div>
+        <!-- <img src="Images/laser-red-2.png" alt="" /> -->
+      </div>
+      <div class="menu-button">
+        <a href="/home.html" id="main-menu">Back to Menu</a>
+      </div>
+    </div>
+    <script src="js/Game.js"></script>
+    <script src="test.js"></script>
   </body>
 </html>

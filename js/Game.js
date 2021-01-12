@@ -81,4 +81,5 @@ class Game {
     }
   }
 }
-export default Game;
+const game = new Game(110, 80);
+// export default Game;

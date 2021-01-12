@@ -21,5 +21,8 @@ class Helper {
       r2.bottom < r1.top
     );
   }
+  setPosition(el, x, y) {
+    el.style.transform = `translate(${x}px, ${y}px)`;
+  }
 }
 export default Helper;
