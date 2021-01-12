@@ -1,0 +1,11 @@
+.laser {
+  position: absolute;
+  margin-left: 2.5px;
+  height: 30px;
+}
+.enemylaser {
+  position: absolute;
+  margin-left: 2.5px;
+  height: 30px;
+}
+

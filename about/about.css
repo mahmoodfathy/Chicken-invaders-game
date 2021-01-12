@@ -1,10 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "arcade";
+  src: URL("arcade (1).ttf") format("truetype");
+}
+/*
+.pink {
+  color: #fc30ad;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ff76cb, 0 3px 0 #ff76cb, 0 4px 0 #ff76cb,
+    0 5px 0 #ff76cb, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.fosdoki {
+  color: #24cabc;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #54ded1, 0 3px 0 #54ded1, 0 4px 0 #54ded1,
+    0 5px 0 #54ded1, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.orange {
+  color: #f8430e;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #f6871e, 0 3px 0 #f6871e, 0 4px 0 #f6871e,
+    0 5px 0 #f6871e, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.green {
+  color: #7dbd1e;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #a7d244, 0 3px 0 #a7d244, 0 4px 0 #a7d244,
+    0 5px 0 #a7d244, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.blue {
+  color: #2780d4;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #152783, 0 3px 0 #152783, 0 4px 0 #152783,
+    0 5px 0 #152783, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.red {
+  color: #af0706;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #d61e1e, 0 3px 0 #d61e1e, 0 4px 0 #d61e1e,
+    0 5px 0 #d61e1e, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.velvet {
+  color: blueviolet;
+
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 blueviolet, 0 3px 0 blueviolet,
+    0 4px 0 blueviolet, 0 5px 0 blueviolet, 0 6px 1px rgba(0, 0, 0, 0.1),
+    0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+    0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+}*/
 .names {
-  margin-top: -300px;
+  line-height: 1.8em;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: -410px;
   color: white;
   text-align: center;
-  position: relative;
+  position: absolute;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 30px;
+  font-family: fantasy;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #767fff, 0 3px 0 #767fff, 0 4px 0 #767fff,
+    0 5px 0 #767fff, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.bttn {
+  width: 150px;
+  height: 55px;
+  text-align: center;
+  align-items: center;
+  size: 300px;
+  font-size: 20px;
+  font-weight: bolder;
+  font-style: oblique;
+  color: black;
+  background-color: rgb(187, 152, 251);
+  border-radius: 7.5px;
+  /*text-shadow: 0 1px 0 rgb(204, 204, 204), 0 2px 0 #76ffd6, 0 3px 0 #76ffd6,
+    0 4px 0 #76ffd6, 0 5px 0 #76ffd6, 0 6px 1px rgba(0, 0, 0, 0.1),
+    0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+    0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+*/
+  text-align: center;
+
+  display: inline-block;
+
+  cursor: pointer;
+  margin-top: 620px;
 }
 body {
-  background-image: url("/home/aya/Desktop/javaproject/about/67b2a9ba5e85822f237caae92111e938.gif");
+  background-image: url("67b2a9ba5e85822f237caae92111e938.gif");
   background-size: 1300px;
 }
