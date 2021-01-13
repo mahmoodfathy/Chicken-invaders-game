@@ -6,11 +6,11 @@ class laser {
 
   //create laser element:
 
-  createLaser(container ,x,y) {
+  createLaser(container) {
     const element = document.createElement("img");
     element.src = "images/laser-blue-3.png";
     element.className = "enemylaser";
-    this.element1 = element;
+    this.element = element;
     container.appendChild(element);
     const PLaser = this; 
    
@@ -19,13 +19,12 @@ class laser {
     const audio = new Audio("audio/sfx-laser1.ogg");
     audio.play();
 
-    setPosition(element,x,y);
+    setPosition(element,this.x,this.y);
   }
 
   //update lasers:
   updateLasers(dt, containers) {
     const laserele = game.lasers;
-    //const PLaser = new laser(x, y, element);
     for (var i = 0; i < laserele.length; i++) {
       const laser = laserele[i];
       laser.y -= dt * LASER_MAX_SPEED ;
@@ -56,16 +55,17 @@ class laser {
     laser.isDead = true;
   }
   //======================================================*//
-  createEnemyLaser(containers,x,y) {
+  createEnemyLaser(containers) {
     
     const element = document.createElement("img");
     element.src = "images/egg2.png";
     element.className = "enemylaser";
-    this.element2 = element;
+    this.element = element;
     containers.appendChild(element);
+
    const lenemy = this;
     game.enemylaser.push(lenemy);
-    setPosition(elements,x,y);
+    setPosition(elements,this.x,this.y);
   }
   updateEnemylaser(dt, containers) {
     
