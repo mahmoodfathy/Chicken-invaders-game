@@ -1,8 +1,4 @@
-var clicked = false;
-localStorage.setItem("clicked", clicked);
-
-var demoContainer = document.querySelector('.demo-container');
-var backdrop, modal;
+var clicked = false, demoContainer = document.querySelector('.demo-container'), backdrop, modal;
 
 function closeModal(){
   if (backdrop) {
@@ -14,53 +10,78 @@ function closeModal(){
   }
 }
 
+function create_backdrop(){
+  backdrop = document.createElement('div');
+  backdrop.classList.add('backdrop');
+  document.body.insertBefore(backdrop, demoContainer);
+}
+
+function add_modalContent(){
+  modal = document.createElement('div');
+  modal.classList.add('modal');
+  var modalHeading = document.createElement('h1');
+  modalHeading.textContent = 'You sure you want to be a chicke- I mean, are you sure you want to quit?';
+  modal.appendChild(modalHeading);
+
+  var imag = document.createElement('img');
+  imag.src = "modal_chic.jpg";
+  imag.width = 200
+  modal.appendChild(imag);
+}
+
+function add_modalActions(){
+  modal = document.createElement('div');
+  modal.classList.add('modal');
+  var modalHeading = document.createElement('h1');
+  modalHeading.textContent = 'You sure you want to be a chicke- I mean, are you sure you want to quit?';
+  modal.appendChild(modalHeading);
+
+  var imag = document.createElement('img');
+  imag.src = "modal_chic.jpg";
+  imag.width = 200
+  modal.appendChild(imag);
+}
+
+function add_ActionButtons(){
+  var modalActionsContainer = document.createElement('div');
+  // modalActionsContainer.classList.add('modal-actions');
+  modal.appendChild(modalActionsContainer);
+  buttons = {b2:['btn-cancel', 'Quit', quit], b1: ['btn-resume', 'Resume', resume]}
+  for(i in buttons){
+    var b = document.createElement('button')
+    b.setAttribute('type', 'button');
+    b.classList.add(buttons[i][0]);
+    b.textContent = buttons[i][1];
+    b.addEventListener('click', buttons[i][2]);
+    modalActionsContainer.appendChild(b);
+  }
+}
+
+function quit(){
+  clicked=!clicked
+  closeModal()
+  console.log("QUIT");
+}
+
+function resume(){
+  clicked=!clicked
+  closeModal()
+  console.log("Resume");
+}
+
+
 document.addEventListener('keydown', function(e) {
   if(e.key == "Escape"){
     if(clicked){
       closeModal()
     }
     if(!clicked){
-      backdrop = document.createElement('div');
-      backdrop.classList.add('backdrop');
-      document.body.insertBefore(backdrop, demoContainer);
-    
-      modal = document.createElement('div');
-      modal.classList.add('modal');
-    
-      var modalHeading = document.createElement('h1');
-      modalHeading.textContent = 'You sure you want to be a chicke- I mean, are you sure you want to quit?';
-      modal.appendChild(modalHeading);
-    
-      var imag = document.createElement('img');
-      imag.src = "modal_chic.jpg";
-      imag.width = 200
-      modal.appendChild(imag);
-    
-      var modalActionsContainer = document.createElement('div');
-      // modalActionsContainer.classList.add('modal-actions');
-      modal.appendChild(modalActionsContainer);
-    
-      var cancelButton = document.createElement('button');
-      cancelButton.setAttribute('type', 'button');
-      cancelButton.classList.add('btn-cancel');
-      cancelButton.textContent = 'Confirm';
-      cancelButton.addEventListener('click', closeModal);
-      modalActionsContainer.appendChild(cancelButton);
-    
-      var confirmButton = document.createElement('button');
-      confirmButton.setAttribute('type', 'button');
-      confirmButton.classList.add('btn-confirm');
-      confirmButton.textContent = 'Quit';
-      confirmButton.addEventListener('click', function() {
-        closeModal();
-      });
-      modalActionsContainer.appendChild(confirmButton);
-    
+      create_backdrop()
+      add_modalContent()
+      add_ActionButtons()
       document.body.insertBefore(modal, demoContainer);
     }  
     clicked = !clicked
   }
 });
-
-document.addEventListener("keydown", function g(e){console.log(e.key);});
 
