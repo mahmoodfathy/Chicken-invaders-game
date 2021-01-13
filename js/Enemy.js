@@ -27,7 +27,7 @@ class Enemy {
     $explosion.style.transform = enemy.$element.style.transform;
     $container.replaceChild($explosion, enemy.$element);
     enemy.isDead = true;
-    const audio = new Audio("sound/destroy.mp3");
+    const audio = new Audio("sound/chicken-sound.mp3");
     audio.play();
 
     setTimeout(() => {
@@ -54,7 +54,8 @@ function updateEnemies(dt, $container) {
     enemy.cooldown -= dt; //decrease cooldown time
     if (enemy.cooldown <= 0) {
       //check if the laser cooled down
-      createEnemyLaser($container, x, y);
+      const laser = new Laser(x, y);
+      laser.createEnemyLaser($container);
       //reset cooldown
       enemy.cooldown = ENEMY_COOLDOWN;
     }

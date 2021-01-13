@@ -3,52 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/App.css" />
-
-    <title>Game</title>
+    <title>Space Game</title>
+    <link rel="stylesheet" href="css/main.css" />
   </head>
+
   <body>
-    <div class="row">
-      <!-- <img src="Images/Logo.png" /> -->
-
-      <h3>Instructions</h3>
-      <p>The aim is to eliminate All the chickens</p>
-      <img src="Images/chicken.png" />
-
-      <h4>You Can Control the Space-Ship With:</h4>
-      <div class="container">
-        <p class="up">Press UP Arrow key To Go Up</p>
-        <div class="key_button">&#8593;</div>
+    <div class="wrap">
+      <header>Space Game</header>
+      <div class="game-wrapper">
+        <div class="game"></div>
+        <div class="congratulations">
+          <h1>Congratulations!</h1>
+          <h2>You won the game</h2>
+          <button class="btn" onclick="window.location.reload()">
+            Restart
+          </button>
+        </div>
+        <div class="game-over">
+          <h1>GAME OVER</h1>
+          <h2>You lost the game</h2>
+          <button class="btn" onclick="window.location.reload()">
+            Restart
+          </button>
+        </div>
       </div>
-      <div class="gif">
-        <img src="Images/arcade2.gif" />
-      </div>
-      <div class="container">
-        <p class="up">Press Down Arrow key To Go Down</p>
-        <div class="key_button">&#8595;</div>
-      </div>
-
-      <div class="container">
-        <p class="up">Press Left Arrow key To Go Left</p>
-        <div class="key_button">&#8592;</div>
-      </div>
-      <div class="container">
-        <p class="up">Press Right Arrow key To Go Right</p>
-        <div class="key_button">&#8594;</div>
-      </div>
-      <div class="container">
-        <p class="up">Press Space Arrow key To Fire</p>
-        <div class="key_button">&#8212;</div>
-        <!-- <img src="Images/laser-red-2.png" alt="" /> -->
-      </div>
-      <div class="menu-button">
-        <a href="/home.html" id="main-menu">Back to Menu</a>
-      </div>
+      <footer>Left/right keys to move, spacebar to shoot</footer>
     </div>
+    <script src="js/Config.js"></script>
     <script src="js/Game.js"></script>
     <script src="js/Helper.js"></script>
     <script src="js/Enemy.js"></script>
+    <script src="js/Laser.js"></script>
+    <script src="js/Player.js"></script>
 
-    <script src="test.js"></script>
+    <script src="Main.js"></script>
   </body>
 </html>
