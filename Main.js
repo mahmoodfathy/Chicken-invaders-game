@@ -1,8 +1,7 @@
 const game = new Game();
 const player = new Player();
 
-game.init();
-
+game.init(player);
 function update(e) {
   const currentTime = Date.now();
   const dt = (currentTime - game.lastTime) / 1000.0;
@@ -19,13 +18,15 @@ function update(e) {
 
   const $container = document.querySelector(".game");
   player.update(dt, $container);
-  updateLasers(dt, $container);
+  const playerLaser = new Laser(3, 4)
+  playerLaser.updateLasers(dt, $container);
   updateEnemies(dt, $container);
   updateEnemyLasers(dt, $container);
 
   game.lastTime = currentTime;
   window.requestAnimationFrame(update);
 }
+
 function onKeyDown(e) {
   if (e.keyCode === KEY_CODE_LEFT) {
     game.leftPressed = true;
