@@ -8,7 +8,7 @@ class Player {
     container.appendChild(player);
     game.setPosition(player, game.playerX, game.playerY);
   }
-  update(dt, $container) {
+  update(dt, container) {
     if (game.leftPressed) game.playerX -= dt * PLAYER_MAX_SPEED;
     if (game.rightPressed) game.playerX += dt * PLAYER_MAX_SPEED;
 
@@ -21,7 +21,7 @@ class Player {
 
     if (game.spacePressed && game.playerCooldown <= 0) {
       const laser = new Laser(game.playerX, game.playerY);
-      laser.create($container);
+      laser.create(container);
       game.playerCooldown = LASER_COOLDOWN;
     }
     if (game.playerCooldown > 0) {
@@ -34,13 +34,14 @@ class Player {
 
   // here just checking if te player reached the boundries of the screen
   clamp(v, min, max) {
-    if (v < min) {
-      return min;
-    } else if (v > max) {
-      return max;
-    } else {
-      return v;
-    }
+    return v < min? min : (v>max? max:v)
+    // if (v < min) {
+    //   return min;
+    // } else if (v > max) {
+    //   return max;
+    // } else {
+    //   return v;
+    // }
   }
 
   destroy(container, player) {

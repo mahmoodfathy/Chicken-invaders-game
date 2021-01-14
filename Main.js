@@ -17,11 +17,11 @@ function update(e) {
     return;
   }
 
-  const $container = document.querySelector(".game");
-  player.update(dt, $container);
-  updateLasers(dt, $container);
-  updateEnemies(dt, $container);
-  updateEnemyLasers(dt, $container);
+  const container = document.querySelector(".game");
+  player.update(dt, container);
+  updateLasers(dt, container);
+  updateEnemies(dt, container);
+  updateEnemyLasers(dt, container);
 
   game.lastTime = currentTime;
   window.requestAnimationFrame(update);
