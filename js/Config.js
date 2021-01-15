@@ -1,6 +1,6 @@
 const PLAYER_WIDTH = 20;
-const PLAYER_MAX_SPEED = 600;
-const LASER_MAX_SPEED = 200.0;
+let PLAYER_MAX_SPEED = 600;
+let LASER_MAX_SPEED = 200.0;
 const LASER_COOLDOWN = 0.5;
 const ENEMIES_PER_ROW = 10;
 const ENEMY_HORIZONTAL_PADDING = 80;
@@ -12,3 +12,7 @@ const KEY_CODE_RIGHT = 39;
 const KEY_CODE_SPACE = 32;
 const GAME_HEIGHT = 600;
 const GAME_WIDTH = 800;
+let ENEMY_X = 50
+let ENEMY_Y = 10
+let SCORE=0;
+let lives=3;

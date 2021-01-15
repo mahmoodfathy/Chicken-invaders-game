@@ -1,12 +1,12 @@
 class Player {
-  create(container, img) {
-    game.playerX = game.width / 2;
-    game.playerY = game.height - 50;
-    const player = document.createElement("img");
-    player.src = img;
-    player.className = "player";
-    container.appendChild(player);
-    game.setPosition(player, game.playerX, game.playerY);
+  create($container, img) {
+    game.playerX = GAME_WIDTH / 2;
+    game.playerY = GAME_HEIGHT - 50;
+    const $player = document.createElement("img");
+    $player.src = img;//"Images/player-blue-1.png";
+    $player.className = "player";
+    $container.appendChild($player);
+    setPosition($player, game.playerX, game.playerY);
   }
   update(dt, $container) {
     if (game.leftPressed) game.playerX -= dt * PLAYER_MAX_SPEED;
@@ -34,20 +34,14 @@ class Player {
 
   // here just checking if te player reached the boundries of the screen
   clamp(v, min, max) {
-    if (v < min) {
-      return min;
-    } else if (v > max) {
-      return max;
-    } else {
-      return v;
-    }
+    return v<min ? min : (v>max? max : v)
   }
 
   destroy(container, player) {
     container.removeChild(player);
     game.gameOver = true;
     const audio = new Audio("sound/chicken-sound.mp3");
-    audio.play();
+    // audio.play();
   }
 
   won() {

@@ -1,7 +1,7 @@
 const game = new Game();
 const player = new Player();
 
-game.init();
+game.init(player);
 
 function update(e) {
   const currentTime = Date.now();

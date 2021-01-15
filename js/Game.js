@@ -18,9 +18,10 @@ class Game {
   }
 
   //initiates game
-  init() {
+  init(player) {
     const $container = document.querySelector(".game");
-    createPlayer($container); //this need the player class
+    // createPlayer($container); //this need the player class
+    player.create($container, "Images/player-blue-1.png"); //this need the player class
 
     const enemySpacing =
       (GAME_WIDTH - ENEMY_HORIZONTAL_PADDING * 2) / (ENEMIES_PER_ROW - 1);
@@ -36,12 +37,12 @@ class Game {
     }
   }
 }
-function createPlayer($container) {
-  game.playerX = GAME_WIDTH / 2;
-  game.playerY = GAME_HEIGHT - 50;
-  const $player = document.createElement("img");
-  $player.src = "Images/player-blue-1.png";
-  $player.className = "player";
-  $container.appendChild($player);
-  setPosition($player, game.playerX, game.playerY);
-}
+// function createPlayer($container) {
+//   game.playerX = GAME_WIDTH / 2;
+//   game.playerY = GAME_HEIGHT - 50;
+//   const $player = document.createElement("img");
+//   $player.src = "Images/player-blue-1.png";
+//   $player.className = "player";
+//   $container.appendChild($player);
+//   setPosition($player, game.playerX, game.playerY);
+// }
