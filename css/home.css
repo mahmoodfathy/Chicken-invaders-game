@@ -179,3 +179,11 @@ img{
   bottom: 5px;
   left: 0
 }
+
+.rocket{
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  left: 150px;
+  bottom: 150px;
+}

@@ -1,0 +1,246 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header {
+  display: none;
+  text-align: center;
+  background: black;
+  color: #fff;
+  padding: 10px;
+}
+
+footer {
+  padding: 10px;
+  text-align: center;
+  font-size: 11px;
+  background: black;
+  color: white;
+}
+
+.game-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+}
+.game {
+  width: 800px;
+  height: 600px;
+  background: url(../Images/background-blue.png);
+  animation: scroll-background 5s linear infinite;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+@keyframes scroll-background {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-y: 256px;
+  }
+}
+
+.game .enemy {
+  position: absolute;
+  margin-left: -20px;
+  margin-top: -18px;
+  width: 40px;
+}
+
+.game .explosion {
+  position: absolute;
+  margin-left: -20px;
+  margin-top: -18px;
+  width: 40px;
+}
+
+.game .present {
+  position: absolute;
+  margin-left: -11px;
+  width: 22px;
+}
+
+.game .player {
+  position: absolute;
+  margin-left: -20px;
+  width: 40px;
+}
+
+.game .laser {
+  position: absolute;
+  margin-left: -2.5px;
+  height: 30px;
+}
+
+.game .enemy-laser {
+  position: absolute;
+  margin-left: -2.5px;
+  height: 30px;
+}
+
+.congratulations {
+  display: none;
+  position: absolute;
+  background: #c7a526;
+  color: white;
+  padding: 20px 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  animation: pop-in 1s;
+  left: 30%;
+  top: 30%;
+}
+
+.game-over {
+  display: none;
+  position: absolute;
+  background: #6b1818;
+  color: white;
+  padding: 20px 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  animation: pop-in 1s;
+  left: 30%;
+  top: 30%;
+}
+
+.btn {
+  border: 2px solid #36bbf5;
+  border-radius: 3px;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(
+    to bottom,
+    #fff 0%,
+    #fff 49%,
+    #f5f5f5 50%,
+    #eee 100%
+  );
+  padding: 10px 40px;
+  font: 14px sans-serif;
+}
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: translate(0, -100px);
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(0, 30px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/*aya*/
+.game .score, .game .lives{
+  color: rgb(0, 183, 255);
+  width: 200px;
+  height: 5px;
+}
+.game .lives img,.game .score img {
+  margin-left: 20px;
+  margin-top: 12px;
+  margin-right: 10px;
+}
+#lives 
+#score {
+  padding-bottom: 35px;
+  border-bottom: 20px;
+}
+/* .game .lives {
+  color: rgb(0, 183, 255);
+  width: 200px;
+  height: 5px;
+} */
+/* .game .lives img {
+  margin-left: 20px;
+  margin-top: 12px;
+  margin-right: 10px;
+} */
+/* #lives {
+  padding-bottom: 35px;
+  border-bottom: 20px;
+} */
+
+
+/*MODAAAAL*/
+/* General Styles*/
+* {
+  box-sizing: border-box;
+}
+
+
+button {
+  font: inherit;
+  background: transparent;
+  border: 2px solid #521751;
+  padding: 0.5rem 1rem;
+  color: #521751;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+/* The Modal */
+.modal {
+  position: fixed;
+  z-index: 200;
+  top: 10%;
+  /* bottom: 30%; */
+  left: 40%;
+  width: 20%;
+  background: white;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  animation-name: animatetop;
+  animation-duration: 0.7s
+}
+
+@keyframes animatetop{
+  from {top: -300px; opacity: 0}
+  to {top: 10%; opacity: 1}
+}
+.modal h1 {
+  color: #521751;
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.modal-input {
+  margin: 0.5rem 0;
+}
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.open {
+  display: block;
+}

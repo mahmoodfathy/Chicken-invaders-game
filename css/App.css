@@ -1,0 +1,103 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+body {
+  background: radial-gradient(
+    circle,
+    rgba(102, 51, 153, 1) 0%,
+    rgba(209, 35, 197, 1) 0%,
+    rgba(102, 51, 153, 1) 100%
+  );
+}
+h3,
+h4 {
+  color: #cddbf1;
+  font-size: 1.9em;
+  font-family: "Press Start 2P";
+  text-align: center;
+}
+p {
+  color: #cddbf1;
+  font-size: 1.3em;
+  font-family: "Press Start 2P";
+  text-align: center;
+}
+.row {
+  text-align: center;
+}
+.key_button {
+  box-sizing: border-box;
+  line-height: 80px;
+  font-size: 22px;
+  text-align: center;
+  width: 80px;
+  color: #555;
+  cursor: pointer;
+  margin: 15px 15px;
+  height: 80px;
+  border-color: #f2f2f2;
+  border-style: solid;
+  text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
+  border-width: 1px;
+  border-radius: 10px;
+  background: -webkit-linear-gradient(
+    top,
+    #f9f9f9 0%,
+    #d2d2d2 80%,
+    #c0c0c0 100%
+  );
+  font-family: sans-serif;
+  display: inline-block;
+  transition: box-shadow 0.3s ease, transform 0.15s ease;
+  box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 6px 0 #c0c0c0,
+    0 8px 17px rgba(#444, 0.4), 2px 1px 4px rgba(#444, 0.25),
+    -2px 1px 4px rgba(#444, 0.25), 0 9px 16px rgba(#444, 0.1);
+}
+
+.key_button:hover,
+.key_button:focus {
+  box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 4px 0 #c0c0c0,
+    0 2px 35px rgba(#444, 0.3), 2px 2px 4px rgba(#444, 0.25),
+    -2px 2px 4px rgba(#444, 0.25), 0 7px 4px rgba(#444, 0.1);
+  transform: translateY(2px);
+}
+
+.key_button:active {
+  box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 0 0 #c0c0c0,
+    0 0px 30px rgba(#444, 0.15), 2px 2px 4px rgba(#444, 0.25),
+    -2px 2px 4px rgba(#444, 0.25), 0 0px 4px rgba(#444, 0.25);
+  transform: translateY(4px);
+}
+.container {
+  display: flex;
+}
+.up {
+  justify-content: space-between;
+}
+.menu-button {
+  padding: 20px;
+  margin-bottom: 30px;
+  transition: all 0.4s ease;
+}
+
+.menu-button a {
+  padding: 20px;
+  color: #99b5e2;
+  font-size: 1.2em;
+  text-decoration: none;
+  background-color: #1c458b;
+  font-family: "Press Start 2P";
+
+  box-shadow: -7px 7px 4px 4px #99a5e2;
+}
+.menu-button a:hover {
+  padding: 20px;
+  color: #cddbf1;
+  text-decoration: none;
+  background-color: #3265ba;
+
+  box-shadow: 0px 2px 2px 2px #99a5e2;
+}
+.gif {
+  position: absolute;
+  margin-left: 700px;
+  margin-top: -100px;
+}
