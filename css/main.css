@@ -16,6 +16,7 @@ body {
 }
 
 header {
+  display: none;
   text-align: center;
   background: black;
   color: #fff;
@@ -62,6 +63,19 @@ footer {
   width: 40px;
 }
 
+.game .explosion {
+  position: absolute;
+  margin-left: -20px;
+  margin-top: -18px;
+  width: 40px;
+}
+
+.game .present {
+  position: absolute;
+  margin-left: -11px;
+  width: 22px;
+}
+
 .game .player {
   position: absolute;
   margin-left: -20px;
@@ -90,6 +104,8 @@ footer {
   border-radius: 10px;
   text-align: center;
   animation: pop-in 1s;
+  left: 30%;
+  top: 30%;
 }
 
 .game-over {
@@ -102,23 +118,11 @@ footer {
   border-radius: 10px;
   text-align: center;
   animation: pop-in 1s;
+  left: 30%;
+  top: 30%;
 }
 
 .btn {
-  border: 2px solid #36bbf5;
-  border-radius: 3px;
-  box-shadow: 0 2px rgba(0, 0, 0, 0.15);
-  background: linear-gradient(
-    to bottom,
-    #fff 0%,
-    #fff 49%,
-    #f5f5f5 50%,
-    #eee 100%
-  );
-  padding: 10px 40px;
-  font: 14px sans-serif;
-}
-.butn {
   border: 2px solid #36bbf5;
   border-radius: 3px;
   box-shadow: 0 2px rgba(0, 0, 0, 0.15);
@@ -149,47 +153,39 @@ footer {
 }
 
 /*aya*/
-.game .score {
+.game .score, .game .lives{
   color: rgb(0, 183, 255);
   width: 200px;
   height: 5px;
 }
-.game .score img {
+.game .lives img,.game .score img {
   margin-left: 20px;
   margin-top: 12px;
   margin-right: 10px;
 }
+#lives 
 #score {
   padding-bottom: 35px;
   border-bottom: 20px;
 }
-.game .lives {
+/* .game .lives {
   color: rgb(0, 183, 255);
   width: 200px;
   height: 5px;
-}
-.game .lives img {
-  margin-left: 20px;
-  margin-top: 12px;
-  margin-right: 10px;
-}
-#lives {
-  padding-bottom: 35px;
-  border-bottom: 20px;
-}
-/* .game .score img {
+} */
+/* .game .lives img {
   margin-left: 20px;
   margin-top: 12px;
   margin-right: 10px;
 } */
-/* #score #lives{
+/* #lives {
   padding-bottom: 35px;
   border-bottom: 20px;
 } */
 
 
 /*MODAAAAL*/
-/* General Styles */
+/* General Styles*/
 * {
   box-sizing: border-box;
 }
@@ -220,6 +216,7 @@ button {
   animation-name: animatetop;
   animation-duration: 0.7s
 }
+
 @keyframes animatetop{
   from {top: -300px; opacity: 0}
   to {top: 10%; opacity: 1}
