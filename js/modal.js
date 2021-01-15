@@ -25,7 +25,7 @@ function add_modalContent(){
 
   var imag = document.createElement('img');
   imag.src = "Images/modal_chic.jpg";
-  imag.width = 200
+  imag.width = 200;
   modal.appendChild(imag);
 }
 
@@ -46,12 +46,12 @@ function add_ActionButtons(){
 }
 
 function quit(){
-  PAUSE=!PAUSE
-  closeModal()
-  console.log("QUIT");
-  LASER_MAX_SPEED = 0
-  ENEMY_X=0
-  ENEMY_Y=0
+  PAUSE=!PAUSE;
+  closeModal();
+  LASER_MAX_SPEED = 0;
+  ENEMY_X=0;
+  ENEMY_Y=0;
+  window.location.replace("home.html");
 }
 
 function resume(){
