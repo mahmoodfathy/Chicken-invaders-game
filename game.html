@@ -12,11 +12,19 @@
       <header>Space Game</header>
       <div class="game-wrapper">
         <div class="game">
-          <div class="score">
-            <img src="Images/chicken.png" width="30px" style="display: inline-block; ">
-            <p id="score" style="display:inline-block ;">0</p>
-          </div>  
-        <div class="congratulations">
+
+          <div id="info_wrapper" style=" display: flex;">
+            <div class="score">
+              <img src="Images/chicken.png" width="30px" style="display: inline-block;  flex: 0 0 10%;">
+              <p id="score" style="display:inline-block ;">0</p>
+            </div>
+            <div class="lives">
+              <img src="Images/lives.webp" width="30px" style="display: inline-block;  flex: 2;">
+              <p id="lives" style="display:inline-block; color:red">3</p>
+            </div>  
+          </div>
+
+          <div class="congratulations">
           <h1>Congratulations!</h1>
           <h2>You won the game</h2>
           <button class="btn" onclick="window.location.reload()">
