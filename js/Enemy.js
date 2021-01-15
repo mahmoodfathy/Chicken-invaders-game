@@ -33,15 +33,14 @@ class Enemy {
     present.create($container);
     
     const audio = new Audio("sound/chicken-sound.mp3");
-    // audio.play();
+    audio.play();
     SCORE=SCORE+1;
 
     setTimeout(() => {
       //timer to remove explosion
       $container.removeChild($explosion);
     }, 5);
-    document.getElementById("score").innerHTML=SCORE; 
-
+    document.getElementById("score").innerText=SCORE; 
 
   }
 }

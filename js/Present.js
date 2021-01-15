@@ -43,6 +43,8 @@ function updatePresents(dt, $container){
     
     if(rectsIntersect(r1, r2)){
       present.destroy($container);
+      SCORE += 5;
+      document.getElementById("score").innerText=SCORE;
       break;
     }
     

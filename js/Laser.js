@@ -9,7 +9,7 @@ class Laser {
   create(container) {
     const $element = document.createElement("img");
     $element.src = "Images/laser-blue-1.png";
-    $element.className = "enemy-laser";
+    $element.className = "laser";
     this.$element = $element;
     container.appendChild($element);
 
@@ -26,7 +26,7 @@ class Laser {
   createEnemyLaser(containers) {
     if(ENEMY_X!=0){
       const $element = document.createElement("img");
-      $element.src = "Images/egg2.png";
+      $element.src = "Images/egg.png";
       $element.className = "enemy-laser";
       this.$element = $element;
       containers.appendChild($element);
