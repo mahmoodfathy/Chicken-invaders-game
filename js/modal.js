@@ -61,6 +61,7 @@ function resume(){
   LASER_MAX_SPEED = 200
   ENEMY_X=50
   ENEMY_Y=10
+  PLAYER_MAX_SPEED = 600
 }
 
 document.addEventListener('keydown', function(e) {
