@@ -11,23 +11,34 @@
     <div class="wrap">
       <header>Space Game</header>
       <div class="game-wrapper">
-        <div class="game"></div>
-        <div class="congratulations">
-          <h1>Congratulations!</h1>
-          <h2>You won the game</h2>
-          <button class="btn" onclick="window.location.reload()">
-            Restart
-          </button>
-        </div>
-        <div class="game-over">
-          <h1>GAME OVER</h1>
-          <h2>You lost the game</h2>
-          <button class="btn" onclick="window.location.reload()">
-            Restart
-          </button>
+        <div class="game">
+
+          <div id="info_wrapper" style=" display: flex;">
+            <div class="score">
+              <img src="Images/chicken.png" width="30px" style="display: inline-block;  flex: 0 0 10%;">
+              <span id="score" style="display:inline-block ;">0</span>
+            </div>
+            <div class="lives">
+              <img src="Images/lives.webp" width="30px" style="display: inline-block;  flex: 2;">
+              <span id="lives" style="display:inline-block; color:red">3</span>
+            </div>
+          </div>
+          <div class="congratulations">
+            <h1>Congratulations!</h1>
+            <h2>You won the game</h2>
+            <button class="btn" onclick="window.location.reload()">
+              Restart
+            </button>
+          </div>
+          <div class="game-over">
+            <h1>GAME OVER</h1>
+            <h2>You lost the game</h2>
+            <button class="btn" onclick="window.location.reload()">
+              Restart
+            </button>
+          </div>
         </div>
       </div>
-      <footer>Left/right keys to move, spacebar to shoot</footer>
     </div>
     <script src="js/Config.js"></script>
     <script src="js/Game.js"></script>
@@ -35,6 +46,8 @@
     <script src="js/Enemy.js"></script>
     <script src="js/Laser.js"></script>
     <script src="js/Player.js"></script>
+    <script src="js/Present.js"></script>
+    <script src="js/modal.js"></script>
 
     <script src="Main.js"></script>
   </body>
