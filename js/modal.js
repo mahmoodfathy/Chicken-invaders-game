@@ -51,7 +51,7 @@ function quit(){
   LASER_MAX_SPEED = 0;
   ENEMY_X=0;
   ENEMY_Y=0;
-  window.location.replace("home.html");
+  window.location.replace("index.html");
 }
 
 function resume(){
