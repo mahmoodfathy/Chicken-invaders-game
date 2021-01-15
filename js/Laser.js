@@ -24,16 +24,17 @@ class Laser {
 
   //======================================================*//
   createEnemyLaser(containers) {
-    const $element = document.createElement("img");
-    $element.src = "Images/egg2.png";
-    $element.className = "enemy-laser";
-    this.$element = $element;
-    containers.appendChild($element);
-    game.enemyLasers.push(this);
-    setPosition($element, this.x, this.y);
+    if(ENEMY_X!=0){
+      const $element = document.createElement("img");
+      $element.src = "Images/egg2.png";
+      $element.className = "enemy-laser";
+      this.$element = $element;
+      containers.appendChild($element);
+      game.enemyLasers.push(this);
+      setPosition($element, this.x, this.y);
+    }
   }
 }
-
 //update lasers:
 function updateLasers(dt, containers) {
   const lasers = game.lasers;
