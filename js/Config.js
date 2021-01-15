@@ -14,5 +14,6 @@ const GAME_HEIGHT = 600;
 const GAME_WIDTH = 800;
 let ENEMY_X = 50
 let ENEMY_Y = 10
+let PAUSE = false
 let SCORE=0;
 let lives=3;

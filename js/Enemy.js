@@ -40,6 +40,7 @@ class Enemy {
       //timer to remove explosion
       $container.removeChild($explosion);
     }, 5);
+    document.getElementById("score").innerHTML=SCORE; 
 
 
   }

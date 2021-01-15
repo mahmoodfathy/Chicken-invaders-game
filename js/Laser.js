@@ -86,8 +86,14 @@ function updateEnemyLasers(dt, containers) {
     const r2 = $player.getBoundingClientRect();
 
     if (rectsIntersect(r1, r2)) {
-      player.destroy(containers, $player);
-      break;
+      destroylasers(containers, laser);
+      lives--;
+      document.getElementById("lives").innerHTML = lives;
+
+      if(lives == 0){
+        player.destroy(containers, $player);
+        break;
+      }
     }
   }
 

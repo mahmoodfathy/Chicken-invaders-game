@@ -1,4 +1,4 @@
-var clicked = false, demoContainer = document.querySelector('.wrap'), backdrop, modal;
+let demoContainer = document.querySelector('.wrap'), backdrop, modal;
 
 function closeModal(){
   if (backdrop) {
@@ -46,7 +46,7 @@ function add_ActionButtons(){
 }
 
 function quit(){
-  clicked=!clicked
+  PAUSE=!PAUSE
   closeModal()
   console.log("QUIT");
   LASER_MAX_SPEED = 0
@@ -55,24 +55,24 @@ function quit(){
 }
 
 function resume(){
-  clicked=!clicked
   closeModal()
-  console.log("Resume");
+  console.log("Resume clicked");
+  PAUSE=!PAUSE
   LASER_MAX_SPEED = 200
   ENEMY_X=50
   ENEMY_Y=10
 }
 
 document.addEventListener('keydown', function(e) {
-  if(e.key == "Escape" || e.keyCode == 27){
-    if(clicked){
+  if(e.key == "Escape" || e.code == 27){
+    if(PAUSE){
       closeModal()
       LASER_MAX_SPEED = 200
       ENEMY_X=50
       ENEMY_Y=10
       PLAYER_MAX_SPEED = 600
     }
-    if(!clicked){
+    if(!PAUSE){
       create_backdrop()
       add_modalContent()
       add_ActionButtons()
@@ -81,8 +81,8 @@ document.addEventListener('keydown', function(e) {
       ENEMY_Y=0
       PLAYER_MAX_SPEED = 0
       document.body.insertBefore(modal, demoContainer);
-    }  
-    clicked = !clicked
+    }
+    PAUSE = !PAUSE
   }
 }
 );
