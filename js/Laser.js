@@ -14,7 +14,7 @@ class Laser {
     container.appendChild($element);
 
     game.lasers.push(this); //array holds all the playerlasesrs at game
-    
+
     setPosition($element, this.x, this.y);
 
     const audio = new Audio("sound/sfx-laser1.ogg");
@@ -58,7 +58,7 @@ function updateLasers(dt, containers) {
       if (rectsIntersect(r1, r2)) {
         enemy.destroy(containers, enemy);
         destroylasers(containers, laser);
-        
+
 
         break;
       }
@@ -88,6 +88,9 @@ function updateEnemyLasers(dt, containers) {
     if (rectsIntersect(r1, r2)) {
       destroylasers(containers, laser);
       lives--;
+
+      const audio = new Audio("sound/destroy.mp3");
+      audio.play();
       document.getElementById("lives").innerHTML = lives;
 
       if(lives == 0){
