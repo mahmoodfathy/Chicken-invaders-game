@@ -19,7 +19,7 @@ class Player {
       GAME_WIDTH - PLAYER_WIDTH
     );
 
-    if (game.spacePressed && game.playerCooldown <= 0 && PLAYER_MAX_SPEED!=0) {
+    if (game.spacePressed && game.playerCooldown <= 0 && !PAUSE) {
       const laser = new Laser(game.playerX, game.playerY);
       laser.create($container);
       game.playerCooldown = LASER_COOLDOWN;
