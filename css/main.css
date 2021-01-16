@@ -91,8 +91,8 @@ footer {
 .game .enemy-laser {
   position: absolute;
   margin-left: -2.5px;
-  height: 15px;
-  width: 15px;
+  height: 25px;
+  width: 25px;
 }
 
 .congratulations {

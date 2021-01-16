@@ -26,14 +26,14 @@ class Game {
     }
 
     //this need the player class
-    console.log(levels);
+
     if (levels === 2) {
-      ENEMIES_PER_ROW = 5;
+      ENEMIES_PER_ROW = 7;
       ENEMY_COOLDOWN = 10;
       player.create($container, "Images/player-red-1.png"); //this need the player class
     }
     if (levels === 3) {
-      ENEMIES_PER_ROW = 7;
+      ENEMIES_PER_ROW = 10;
       ENEMY_COOLDOWN = 5;
       player.create($container, "Images/player-green-1.png");
       const next = document.querySelector("#next");
