@@ -133,3 +133,9 @@ footer {
     transform: translate(0, 0);
   }
 }
+.game .explosion {
+  position: absolute;
+  margin-left: -20px;
+  margin-top: -18px;
+  width: 40px;
+}

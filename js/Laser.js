@@ -7,38 +7,37 @@ class Laser {
   //create laser element:
 
   create(container) {
-    const element = document.createElement("img");
-    element.src = "Images/laser-blue-1.png";
-    element.className = "enemy-laser";
-    this.$element = element;
-    container.appendChild(element);
-    const PLaser = this;
+    const $element = document.createElement("img");
+    $element.src = "Images/laser-blue-1.png";
+    $element.className = "enemy-laser";
+    this.$element = $element;
+    container.appendChild($element);
 
-    game.lasers.push(PLaser); //array holds all the playerlasesrs at game
+    game.lasers.push(this); //array holds all the playerlasesrs at game
+
+    setPosition($element, this.x, this.y);
 
     const audio = new Audio("audio/sfx-laser1.ogg");
     audio.play();
-
-    setPosition(element, this.x, this.y);
   }
 
   //======================================================*//
   createEnemyLaser(containers) {
-    const element = document.createElement("img");
-    element.src = "Images/egg2.png";
-    element.className = "enemy-laser";
-    this.element = element;
-    containers.appendChild(element);
+    const $element = document.createElement("img");
+    $element.src = "Images/egg2.png";
+    $element.className = "enemy-laser";
+    this.$element = $element;
+    containers.appendChild($element);
     game.enemyLasers.push(this);
-    setPosition(element, this.x, this.y);
+    setPosition($element, this.x, this.y);
   }
 }
 
 //update lasers:
 function updateLasers(dt, containers) {
-  const laserele = game.lasers;
-  for (var i = 0; i < laserele.length; i++) {
-    const laser = laserele[i];
+  const lasers = game.lasers;
+  for (var i = 0; i < lasers.length; i++) {
+    const laser = lasers[i];
     laser.y -= dt * LASER_MAX_SPEED;
     if (laser.y < 0) {
       destroylasers(containers, laser);
@@ -47,16 +46,16 @@ function updateLasers(dt, containers) {
     setPosition(laser.$element, laser.x, laser.y);
 
     const r1 = laser.$element.getBoundingClientRect();
-    const enemy = game.enemies;
-    for (let j = 0; j < enemy.length; j++) {
-      const enemi = enemy[j];
+    const enemies = game.enemies;
+    for (let j = 0; j < enemies.length; j++) {
+      const enemy = enemies[j];
 
-      if (enemi.isDead) continue;
-      const r2 = enemi.$element.getBoundingClientRect();
+      if (enemy.isDead) continue;
+      const r2 = enemy.$element.getBoundingClientRect();
 
       if (rectsIntersect(r1, r2)) {
+        enemy.destroy(containers, enemy);
         destroylasers(containers, laser);
-        enemi.destroy(containers, enemi);
 
         break;
       }
@@ -69,24 +68,44 @@ function destroylasers(containers, laser) {
   containers.removeChild(laser.$element);
   laser.isDead = true;
 }
+
 function updateEnemyLasers(dt, containers) {
-  const enemy = game.enemyLasers;
-  for (let i = 0; i < enemy.length; i++) {
-    const laser = enemy[i];
+  const lasers = game.enemyLasers;
+  let collideFlag;
+
+  for (let i = 0; i < lasers.length; i++) {
+    const laser = lasers[i];
     laser.y += dt * LASER_MAX_SPEED;
-    if (laser.y < 0) {
+    if (laser.y > GAME_HEIGHT) {
       destroylasers(containers, laser);
     }
-    setPosition(laser.element, laser.x, laser.y);
-    const r1 = laser.element.getBoundingClientRect();
+    setPosition(laser.$element, laser.x, laser.y);
+    const r1 = laser.$element.getBoundingClientRect();
     const $player = document.querySelector(".player");
     const r2 = $player.getBoundingClientRect();
-
+    // console.log(laser.$element);
+    //
     if (rectsIntersect(r1, r2)) {
-      player.destroy(containers, $player);
+      // collideFlag = true;
+
+      LIVES--;
+      if (LIVES === 0) {
+        player.destroy(containers, $player);
+      }
       break;
     }
-  }
+    // console.log(collideFlag);
+    // if (collideFlag) {
+    //   LIVES--;
+    // }
+    // if (rectsIntersect(r1, r2)) {
+    //   // player.destroy(containers, $player);
 
-  game.lasers = game.lasers.filter((e) => !e.isDead);
+    //   break;
+    // }
+  }
+  console.log(LIVES);
+
+  game.enemyLasers = game.enemyLasers.filter((e) => !e.isDead);
+  collideFlag = false;
 }

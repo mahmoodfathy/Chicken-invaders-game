@@ -24,9 +24,11 @@ class Enemy {
     const $explosion = document.createElement("img");
     $explosion.src = "Images/laser-red-8.png";
     $explosion.className = "explosion";
-    $explosion.style.transform = enemy.$element.style.transform;
     $container.replaceChild($explosion, enemy.$element);
+    $explosion.style.transform = enemy.$element.style.transform;
+    ///setPosition($explosion, enemy.x, enemy.y);
     enemy.isDead = true;
+
     const audio = new Audio("sound/chicken-sound.mp3");
     audio.play();
 

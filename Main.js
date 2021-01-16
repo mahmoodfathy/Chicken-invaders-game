@@ -9,6 +9,7 @@ function update(e) {
 
   if (game.gameOver) {
     document.querySelector(".game-over").style.display = "block";
+
     return;
   }
 
