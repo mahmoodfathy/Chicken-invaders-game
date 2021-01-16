@@ -8,8 +8,17 @@ class Laser {
 
   create(container) {
     const $element = document.createElement("img");
-    $element.src = "Images/laser-blue-1.png";
-    $element.className = "enemy-laser";
+    if (levels == 1) {
+      $element.src = "Images/laser-blue-1.png";
+    }
+    if (levels == 2) {
+      $element.src = "Images/laser-red-1.png";
+    }
+    if (levels == 3) {
+      $element.src = "Images/laser-green-11.png";
+    }
+
+    $element.className = "laser";
     this.$element = $element;
     container.appendChild($element);
 
@@ -17,22 +26,23 @@ class Laser {
 
     setPosition($element, this.x, this.y);
 
-    const audio = new Audio("audio/sfx-laser1.ogg");
+    const audio = new Audio("sound/sfx-laser1.ogg");
     audio.play();
   }
 
   //======================================================*//
   createEnemyLaser(containers) {
-    const $element = document.createElement("img");
-    $element.src = "Images/egg2.png";
-    $element.className = "enemy-laser";
-    this.$element = $element;
-    containers.appendChild($element);
-    game.enemyLasers.push(this);
-    setPosition($element, this.x, this.y);
+    if (ENEMY_X != 0) {
+      const $element = document.createElement("img");
+      $element.src = "Images/egg.png";
+      $element.className = "enemy-laser";
+      this.$element = $element;
+      containers.appendChild($element);
+      game.enemyLasers.push(this);
+      setPosition($element, this.x, this.y);
+    }
   }
 }
-
 //update lasers:
 function updateLasers(dt, containers) {
   const lasers = game.lasers;
@@ -71,8 +81,6 @@ function destroylasers(containers, laser) {
 
 function updateEnemyLasers(dt, containers) {
   const lasers = game.enemyLasers;
-  let collideFlag;
-
   for (let i = 0; i < lasers.length; i++) {
     const laser = lasers[i];
     laser.y += dt * LASER_MAX_SPEED;
@@ -86,13 +94,18 @@ function updateEnemyLasers(dt, containers) {
     // console.log(laser.$element);
     //
     if (rectsIntersect(r1, r2)) {
-      // collideFlag = true;
+      destroylasers(containers, laser);
+      lives--;
 
-      LIVES--;
-      if (LIVES === 0) {
+      const audio = new Audio("sound/destroy.mp3");
+      audio.play();
+      document.getElementById("lives").innerHTML = lives;
+
+      if (lives == 0) {
         player.destroy(containers, $player);
+        game.gameOver = true;
+        break;
       }
-      break;
     }
     // console.log(collideFlag);
     // if (collideFlag) {
@@ -104,8 +117,7 @@ function updateEnemyLasers(dt, containers) {
     //   break;
     // }
   }
-  console.log(LIVES);
+  console.log(lives);
 
   game.enemyLasers = game.enemyLasers.filter((e) => !e.isDead);
-  collideFlag = false;
 }
