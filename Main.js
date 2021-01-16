@@ -1,7 +1,7 @@
 const game = new Game();
 const player = new Player();
 
-game.init();
+game.init(player);
 
 function update(e) {
   const currentTime = Date.now();
@@ -22,6 +22,7 @@ function update(e) {
   updateLasers(dt, $container);
   updateEnemies(dt, $container);
   updateEnemyLasers(dt, $container);
+  updatePresents(dt, $container);
 
   game.lastTime = currentTime;
   window.requestAnimationFrame(update);

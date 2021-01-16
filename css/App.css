@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
 body {
+  overflow-x: hidden;
   background: radial-gradient(
     circle,
     rgba(102, 51, 153, 1) 0%,

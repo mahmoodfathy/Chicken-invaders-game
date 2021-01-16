@@ -24,24 +24,32 @@ class Enemy {
     const $explosion = document.createElement("img");
     $explosion.src = "Images/laser-red-8.png";
     $explosion.className = "explosion";
-    $explosion.style.transform = enemy.$element.style.transform;
     $container.replaceChild($explosion, enemy.$element);
+    $explosion.style.transform = enemy.$element.style.transform;
+    ///setPosition($explosion, enemy.x, enemy.y);
     enemy.isDead = true;
+
+    const present = new Present(enemy.x, enemy.y);
+    present.create($container);
+    
     const audio = new Audio("sound/chicken-sound.mp3");
     audio.play();
+    SCORE=SCORE+1;
 
     setTimeout(() => {
       //timer to remove explosion
       $container.removeChild($explosion);
     }, 5);
+    document.getElementById("score").innerText=SCORE; 
+
   }
 }
 
 function updateEnemies(dt, $container) {
   //we sin and cos to make enemies move in a circular way
 
-  const dx = Math.sin(game.lastTime / 1000.0) * 50;
-  const dy = Math.cos(game.lastTime / 1000.0) * 10;
+  const dx = Math.sin(game.lastTime / 1000.0) * ENEMY_X;
+  const dy = Math.cos(game.lastTime / 1000.0) * ENEMY_Y;
 
   const enemies = game.enemies;
 
