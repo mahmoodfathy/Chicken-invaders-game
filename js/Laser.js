@@ -27,7 +27,8 @@ class Laser {
     setPosition($element, this.x, this.y);
 
     const audio = new Audio("sound/sfx-laser1.ogg");
-    audio.play();
+    if(AUDIO)
+      audio.play();
   }
 
   //======================================================*//
@@ -98,7 +99,8 @@ function updateEnemyLasers(dt, containers) {
       lives--;
 
       const audio = new Audio("sound/destroy.mp3");
-      audio.play();
+      if(AUDIO)
+        audio.play();
       document.getElementById("lives").innerHTML = lives;
 
       if (lives == 0) {

@@ -18,7 +18,7 @@ body {
 header {
   display: none;
   text-align: center;
-  background: black;
+  background: red;
   color: #fff;
   padding: 10px;
 }
@@ -106,25 +106,48 @@ footer {
   text-align: center;
   animation: pop-in 1s;
   left: 30%;
-  top: 30%;
+  top: 20%;
   z-index: 999;
+}
+
+#next-level img{
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#restart img{
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .game-over {
   display: none;
   position: absolute;
-  background: #6b1818;
-  color: white;
+  background: white;
+  color: #6b1818;
   padding: 20px 50px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   text-align: center;
   animation: pop-in 1s;
   left: 30%;
-  top: 30%;
+  top: 5%;
   z-index: 999;
 }
-
+.game-over img{
+  border: none;
+  height: 260px;
+  width: 200px;
+  display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
 .btn {
   border: 2px solid #36bbf5;
   border-radius: 3px;
@@ -156,36 +179,49 @@ footer {
 }
 
 /*aya*/
-.game .score,
+.game .mute{
+  height: 5px;  
+  margin-left: 750px;
+  margin-top: 5px;/*without it player disappear*/
+}
+.game #mute_icon{
+  height: 5px;  
+  margin-left: 750px;
+  margin-top: -5px;/*without it player disappear*/
+  display: none;
+}
+
+.game .score{
+  color: rgb(0, 183, 255);
+  width: 200px;
+  height: 5px;  
+}
 .game .lives {
   color: rgb(0, 183, 255);
   width: 200px;
   height: 5px;
+  margin-left: 100px;
+  margin-top: -5px;
 }
 .game .lives img,
-.game .score img {
+.game .score img{
   margin-left: 20px;
   margin-top: 12px;
   margin-right: 10px;
 }
-#lives #score {
+.game .mute img,
+.game #mute_icon img,
+.game .lives img,
+.game .score img{
+  width: 30px;
+  height: 30px;
+}
+
+/* #lives #score {
   padding-bottom: 35px;
   border-bottom: 20px;
-}
-/* .game .lives {
-color: rgb(0, 183, 255);
-width: 200px;
-height: 5px;
 } */
-/* .game .lives img {
-margin-left: 20px;
-margin-top: 12px;
-margin-right: 10px;
-} */
-/* #lives {
-padding-bottom: 35px;
-border-bottom: 20px;
-} */
+
 
 /*MODAAAAL*/
 /* General Styles*/
@@ -254,7 +290,7 @@ border-bottom: 20px;
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   z-index: 100;
 }
 

@@ -32,6 +32,7 @@ class Game {
       ENEMY_COOLDOWN = 10;
       player.create($container, "Images/player-red-1.png"); //this need the player class
     }
+
     if (levels === 3) {
       ENEMIES_PER_ROW = 10;
       ENEMY_COOLDOWN = 5;
@@ -40,6 +41,7 @@ class Game {
       next.innerText = "Restart";
       next.addEventListener("click", () => {
         window.location.reload();
+        // save_progress()
       });
     }
 
