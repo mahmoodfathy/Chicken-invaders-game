@@ -38,7 +38,6 @@ function touch(r1, r2) {
 
 function save_progress(){
   pname =  localStorage.getItem(PLAYER_NAME);
-
   saved_players = JSON.parse(localStorage.getItem(PLAYERS_KEY) || "[]");
   saved_players.sort((a, b) => (a.score < b.score) ? 1 : -1)
   // check if there are player and if the username already exists
