@@ -18,10 +18,30 @@ class Game {
   }
 
   //initiates game
-  init(player) {
+  init() {
     const $container = document.querySelector(".game");
     // createPlayer($container); //this need the player class
-    player.create($container, "Images/player-blue-1.png"); //this need the player class
+    if (levels === 1) {
+      player.create($container, "Images/player-blue-1.png");
+    }
+
+    //this need the player class
+
+    if (levels === 2) {
+      ENEMIES_PER_ROW = 7;
+      ENEMY_COOLDOWN = 10;
+      player.create($container, "Images/player-red-1.png"); //this need the player class
+    }
+    if (levels === 3) {
+      ENEMIES_PER_ROW = 10;
+      ENEMY_COOLDOWN = 5;
+      player.create($container, "Images/player-green-1.png");
+      const next = document.querySelector("#next");
+      next.innerText = "Restart";
+      next.addEventListener("click", () => {
+        window.location.reload();
+      });
+    }
 
     const enemySpacing =
       (GAME_WIDTH - ENEMY_HORIZONTAL_PADDING * 2) / (ENEMIES_PER_ROW - 1);

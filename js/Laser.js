@@ -8,7 +8,16 @@ class Laser {
 
   create(container) {
     const $element = document.createElement("img");
-    $element.src = "Images/laser-blue-1.png";
+    if (levels == 1) {
+      $element.src = "Images/laser-blue-1.png";
+    }
+    if (levels == 2) {
+      $element.src = "Images/laser-red-1.png";
+    }
+    if (levels == 3) {
+      $element.src = "Images/laser-green-11.png";
+    }
+
     $element.className = "laser";
     this.$element = $element;
     container.appendChild($element);
@@ -19,12 +28,11 @@ class Laser {
 
     const audio = new Audio("sound/sfx-laser1.ogg");
     audio.play();
-
   }
 
   //======================================================*//
   createEnemyLaser(containers) {
-    if(ENEMY_X!=0){
+    if (ENEMY_X != 0) {
       const $element = document.createElement("img");
       $element.src = "Images/egg.png";
       $element.className = "enemy-laser";
@@ -59,7 +67,6 @@ function updateLasers(dt, containers) {
         enemy.destroy(containers, enemy);
         destroylasers(containers, laser);
 
-
         break;
       }
     }
@@ -84,7 +91,8 @@ function updateEnemyLasers(dt, containers) {
     const r1 = laser.$element.getBoundingClientRect();
     const $player = document.querySelector(".player");
     const r2 = $player.getBoundingClientRect();
-
+    // console.log(laser.$element);
+    //
     if (rectsIntersect(r1, r2)) {
       destroylasers(containers, laser);
       lives--;
@@ -93,12 +101,23 @@ function updateEnemyLasers(dt, containers) {
       audio.play();
       document.getElementById("lives").innerHTML = lives;
 
-      if(lives == 0){
+      if (lives == 0) {
         player.destroy(containers, $player);
+        game.gameOver = true;
         break;
       }
     }
+    // console.log(collideFlag);
+    // if (collideFlag) {
+    //   LIVES--;
+    // }
+    // if (rectsIntersect(r1, r2)) {
+    //   // player.destroy(containers, $player);
+
+    //   break;
+    // }
   }
+  console.log(lives);
 
   game.enemyLasers = game.enemyLasers.filter((e) => !e.isDead);
 }

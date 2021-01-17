@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "arcade";
+  src: URL("arcade (1).ttf") format("truetype");
+}
+
+.names {
+  line-height: 1.8em;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: -410px;
+  color: white;
+  text-align: center;
+  position: absolute;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 30px;
+  font-family: fantasy;
+  text-shadow: 0 1px 0 #ff968a, 0 2px 0 #ff968a, 0 3px 0 #ff968a,
+    0 4px 0 #ff968a, 0 5px 0 #ff968a, 0 6px 1px rgba(0, 0, 0, 0.1),
+    0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+    0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.bttn {
+  width: 170px;
+  height: 75px;
+  text-align: center;
+  align-items: center;
+  size: 300px;
+  font-size: 20px;
+  font-weight: bolder;
+  font-style: oblique;
+  color: black;
+  background-color: red;
+  border-radius: 7.5px;
+
+  text-align: center;
+
+  display: inline-block;
+
+  cursor: pointer;
+  margin-top: 620px;
+}
+body {
+  background-image: url("2102e8ab940e7c1e9e69ea9cbd8ef602.gif");
+  background-size: 1245px;
+}

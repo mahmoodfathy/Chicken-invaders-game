@@ -187,3 +187,27 @@ img{
   left: 150px;
   bottom: 150px;
 }
+
+@media(max-width: 700px){
+  .rocket{
+    margin: auto;
+    position: relative;
+    left: 0;
+    bottom: 0
+  }
+  
+  .arcade, .stick{
+    display: none
+  }
+}
+
+@media(max-width: 1185px){
+  .arcade, .rocket{
+    position: relative;
+    margin: 10px auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0
+  }
+}
