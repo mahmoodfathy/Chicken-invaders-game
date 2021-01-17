@@ -30,25 +30,20 @@
       <span class="green">S</span>
     </h1>
 
-
-
     <div class="container">
-      <div id="backdrop_player" class="backdrop" style="display: none;"></div>
+      <div id="backdrop_player" class="backdrop"></div>
       <div id="leader_names">
         <label for="pname">Player Name</label>
-        <p style="color: red; ;"></p>
-        <input type="text" id="pname" name="pname" placeholder="Your name.." style="border-radius: 20px;">
+        <p></p>
+        <input type="text" id="pname" name="pname" placeholder="Your name.." />
 
-        <button id='leaders_btn' class="" style="border-radius: 20px; border: 0ch; width: 35px; height: 20px;">
-          <a href="#"><span style="font-size: small;">Go</span></a>
+        <button id="leaders_btn">
+          <a href="#"><span id="go">Go</span></a>
         </button>
-  
-        <!-- <button id="leaders_btn" class="btn" style="border-radius: 20px; width: 65px; height: 40px;">Go</button> -->
       </div>
 
-      <button id='game_btn' class="btn">
-        <a href="#"><span>&#9658;PLAY</span></a>
-        
+      <button id="game_btn" class="btn">
+        <a href="#"><span>&#9658;</span>PLAY</a>
       </button>
 
       <br />
@@ -71,7 +66,6 @@
       <button class="btn">
         <a href="about/about.html"><span>&copy;</span> CREDITS</a>
       </button>
-
     </div>
 
     <div class="arcade">

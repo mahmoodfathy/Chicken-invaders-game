@@ -15,22 +15,6 @@ body {
   height: 100%;
 }
 
-header {
-  display: none;
-  text-align: center;
-  background: red;
-  color: #fff;
-  padding: 10px;
-}
-
-footer {
-  padding: 10px;
-  text-align: center;
-  font-size: 11px;
-  background: black;
-  color: white;
-}
-
 .game-wrapper {
   flex: 1;
   display: flex;
@@ -110,7 +94,7 @@ footer {
   z-index: 999;
 }
 
-#next-level img{
+#next-level img {
   height: 100px;
   width: 100px;
   display: block;
@@ -118,7 +102,7 @@ footer {
   margin-right: auto;
 }
 
-#restart img{
+#restart img {
   height: 100px;
   width: 100px;
   display: block;
@@ -140,13 +124,13 @@ footer {
   top: 5%;
   z-index: 999;
 }
-.game-over img{
+.game-over img {
   border: none;
   height: 260px;
   width: 200px;
   display: block;
-   margin-left: auto;
-   margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 .btn {
   border: 2px solid #36bbf5;
@@ -178,23 +162,22 @@ footer {
   }
 }
 
-/*aya*/
-.game .mute{
-  height: 5px;  
+.game .mute {
+  height: 5px;
   margin-left: 750px;
-  margin-top: 5px;/*without it player disappear*/
+  margin-top: 5px; /*without it player disappear*/
 }
-.game #mute_icon{
-  height: 5px;  
+.game #mute_icon {
+  height: 5px;
   margin-left: 750px;
-  margin-top: -5px;/*without it player disappear*/
+  margin-top: -5px; /*without it player disappear*/
   display: none;
 }
 
-.game .score{
+.game .score {
   color: rgb(0, 183, 255);
   width: 200px;
-  height: 5px;  
+  height: 5px;
 }
 .game .lives {
   color: rgb(0, 183, 255);
@@ -204,7 +187,7 @@ footer {
   margin-top: -5px;
 }
 .game .lives img,
-.game .score img{
+.game .score img {
   margin-left: 20px;
   margin-top: 12px;
   margin-right: 10px;
@@ -212,19 +195,15 @@ footer {
 .game .mute img,
 .game #mute_icon img,
 .game .lives img,
-.game .score img{
+.game .score img {
   width: 30px;
   height: 30px;
 }
 
-/* #lives #score {
-  padding-bottom: 35px;
-  border-bottom: 20px;
-} */
+#lives {
+  color: red;
+}
 
-
-/*MODAAAAL*/
-/* General Styles*/
 * {
   box-sizing: border-box;
 }
@@ -242,7 +221,6 @@ footer {
   margin: 10px;
 }
 
-/* The Modal */
 .modal {
   position: fixed;
   z-index: 200;
