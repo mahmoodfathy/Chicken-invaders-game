@@ -88,13 +88,13 @@ function mute_game(){
   AUDIO = !AUDIO
   if(AUDIO)
     document.getElementById("mute_icon").style.display = "none";
-  if(!AUDIO)
+  else
     document.getElementById("mute_icon").style.display = "block";
 }
 
 window.addEventListener("keydown", onKeyDown);
 window.addEventListener("keyup", onKeyUp);
-document.getElementById("mute").addEventListener("click", mute_game())
+document.getElementById("mute").addEventListener("click", mute_game)
 document.getElementById("mute_icon").addEventListener("click", function(){
   AUDIO = !AUDIO
   document.getElementById("mute_icon").style.display = "none";
