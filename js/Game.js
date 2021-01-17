@@ -32,6 +32,7 @@ class Game {
       ENEMY_COOLDOWN = 10;
       player.create($container, "Images/player-red-1.png"); //this need the player class
     }
+
     if (levels === 3) {
       ENEMIES_PER_ROW = 10;
       ENEMY_COOLDOWN = 5;
@@ -40,6 +41,19 @@ class Game {
       next.innerText = "Restart";
       next.addEventListener("click", () => {
         window.location.reload();
+        saved_players = JSON.parse(localStorage.getItem(PLAYERS_KEY) || "[]");
+        player_name = localStorage.getItem(PLAYER_NAME)
+ 
+        for(player of saved_players){
+          if(player.name == player_name){
+            player.level = levels
+            player.score += SCORE
+          }
+      }
+  
+        // saved_players[saved_players.length-1].score+= SCORE
+        // saved_players[saved_players.length-1].level = levels
+        localStorage.setItem(PLAYERS_KEY, JSON.stringify(saved_players))
       });
     }
 

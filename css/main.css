@@ -204,7 +204,7 @@ footer {
   margin-top: -5px;
 }
 .game .lives img,
-.game .score img {
+.game .score img{
   margin-left: 20px;
   margin-top: 12px;
   margin-right: 10px;
@@ -212,7 +212,7 @@ footer {
 .game .mute img,
 .game #mute_icon img,
 .game .lives img,
-.game .score img {
+.game .score img{
   width: 30px;
   height: 30px;
 }

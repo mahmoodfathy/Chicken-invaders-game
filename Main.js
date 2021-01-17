@@ -44,9 +44,9 @@ function update(e) {
 
   if (player.won()) {
     // document.querySelector(".congratulations").style.display = "block";
-
     document.querySelector("#next-level").style.display = "block";
     document.getElementsByClassName("score_modal")[1].innerHTML = "Your score: "+SCORE;
+    save_player()
     // levels++;
     return;
   }
@@ -78,21 +78,26 @@ function onKeyUp(e) {
     game.rightPressed = false;
   } else if (e.keyCode === KEY_CODE_SPACE) {
     game.spacePressed = false;
+  } else if (e.key === "m" || e.key == "M") {
+    mute_game()
+    game.spacePressed = false;
   }
 }
 
-window.addEventListener("keydown", onKeyDown);
-window.addEventListener("keyup", onKeyUp);
-document.getElementById("mute").addEventListener("click", function(){
+function mute_game(){
   AUDIO = !AUDIO
   if(AUDIO)
     document.getElementById("mute_icon").style.display = "none";
   if(!AUDIO)
     document.getElementById("mute_icon").style.display = "block";
-})
+}
+
+window.addEventListener("keydown", onKeyDown);
+window.addEventListener("keyup", onKeyUp);
+document.getElementById("mute").addEventListener("click", mute_game())
 document.getElementById("mute_icon").addEventListener("click", function(){
   AUDIO = !AUDIO
-    document.getElementById("mute_icon").style.display = "none";
+  document.getElementById("mute_icon").style.display = "none";
 })
 window.requestAnimationFrame(update);
 

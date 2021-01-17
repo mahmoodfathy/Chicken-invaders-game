@@ -28,16 +28,33 @@
       <span class="green">S</span>
     </h1>
 
+
+
     <div class="container">
-      <button class="btn">
-        <a href="game.html"><span>&#9658;</span>PLAY</a>
+
+      <div id="leader_names">
+        <label for="pname">Player Name</label>
+        <input type="text" id="pname" name="pname" placeholder="Your name.." style="border-radius: 30px;">
+        <button id="leaders_btn" class="btn" style="border-radius: 20px; width: 40px; height: 30px;">Go</button>
+      </div>
+
+      <button id='game_btn' class="btn">
+        <a href="#"><span>&#9658;PLAY</span></a>
+        
       </button>
 
       <br />
       <br />
 
       <button class="btn">
-        <a href="Instructions.html"><span>&#33;</span>HOW TO PLAY</a>
+        <a href="Instructions.html">HOW TO PLAY<span>?</span></a>
+      </button>
+
+      <br />
+      <br />
+
+      <button class="btn">
+        <a href="leaderboard.html"><span>&copy;</span> Leaderboard</a>
       </button>
 
       <br />
@@ -46,6 +63,7 @@
       <button class="btn">
         <a href="about/about.html"><span>&copy;</span> CREDITS</a>
       </button>
+
     </div>
 
     <div class="arcade">
@@ -59,5 +77,8 @@
     <div class="rocket">
       <img src="images/rocket.gif" alt="rocket" />
     </div>
+
+    <script src="js/Config.js"></script>
+    <script src="js/home.js"></script>
   </body>
 </html>

@@ -51,6 +51,7 @@ function quit(){
   LASER_MAX_SPEED = 0;
   ENEMY_X=0;
   ENEMY_Y=0;
+  // save_player()
   window.location.replace("index.html");
 }
 
