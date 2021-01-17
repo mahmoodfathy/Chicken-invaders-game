@@ -17,5 +17,5 @@ let ENEMY_Y = 10;
 let PAUSE = false;
 let SCORE = 0;
 let lives = 3;
-let levels = 1;
+let levels = 3;
 let AUDIO = true

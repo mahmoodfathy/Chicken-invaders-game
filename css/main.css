@@ -106,25 +106,32 @@ footer {
   text-align: center;
   animation: pop-in 1s;
   left: 30%;
-  top: 30%;
+  top: 20%;
   z-index: 999;
 }
 
 .game-over {
   display: none;
   position: absolute;
-  background: #6b1818;
-  color: white;
+  background: white;
+  color: #6b1818;
   padding: 20px 50px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   text-align: center;
   animation: pop-in 1s;
   left: 30%;
-  top: 30%;
+  top: 5%;
   z-index: 999;
 }
-
+.game-over img{
+  border: none;
+  height: 260px;
+  width: 200px;
+  display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
 .btn {
   border: 2px solid #36bbf5;
   border-radius: 3px;

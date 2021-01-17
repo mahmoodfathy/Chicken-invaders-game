@@ -17,6 +17,7 @@ nextLevel.addEventListener("click", () => {
     window.requestAnimationFrame(update);
   } else {
     restart.style.display = "block";
+    // document.getElementsByClassName("score_modal")[0].innerHTML = "Your score: "+SCORE;
   }
   // if (levels > 3) {
   //   nextLevel.innerText = "Restart";
@@ -36,6 +37,7 @@ function update(e) {
 
   if (game.gameOver) {
     document.querySelector(".game-over").style.display = "block";
+    document.getElementsByClassName("score_modal")[2].innerHTML = "Your score: "+SCORE;
 
     return;
   }
@@ -44,6 +46,7 @@ function update(e) {
     // document.querySelector(".congratulations").style.display = "block";
 
     document.querySelector("#next-level").style.display = "block";
+    document.getElementsByClassName("score_modal")[1].innerHTML = "Your score: "+SCORE;
     // levels++;
     return;
   }
