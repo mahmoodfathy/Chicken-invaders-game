@@ -33,7 +33,8 @@ class Enemy {
     present.create($container);
 
     const audio = new Audio("sound/chicken-sound.mp3");
-    audio.play();
+    if(AUDIO)
+      audio.play();
     SCORE = SCORE + 1;
 
     setTimeout(() => {

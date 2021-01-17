@@ -29,7 +29,8 @@ class Enemy{
     $container.replaceChild($explosion, enemy.$element);
     enemy.isDead = true;
     const audio = new Audio("sound/destroy.mp3");
-    audio.play();
+    if(AUDIO)
+      audio.play();
 
     setTimeout(()=>{ //timer to remove explosion
       $container.removeChild($explosion);

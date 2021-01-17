@@ -18,3 +18,4 @@ let PAUSE = false;
 let SCORE = 0;
 let lives = 3;
 let levels = 1;
+let AUDIO = true

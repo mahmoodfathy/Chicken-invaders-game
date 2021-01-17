@@ -157,12 +157,14 @@ footer {
 
 /*aya*/
 .game .score,
+.game .mute,
 .game .lives {
   color: rgb(0, 183, 255);
   width: 200px;
   height: 5px;
 }
 .game .lives img,
+.game .mute img,
 .game .score img {
   margin-left: 20px;
   margin-top: 12px;

@@ -80,5 +80,5 @@ function onKeyUp(e) {
 
 window.addEventListener("keydown", onKeyDown);
 window.addEventListener("keyup", onKeyUp);
-
+document.getElementById("mute").addEventListener("click", function(){AUDIO = !AUDIO})
 window.requestAnimationFrame(update);

@@ -1,5 +1,5 @@
 class Present{
-  
+
   constructor(x, y){
     this.x = x;
     this.y = y;
@@ -15,7 +15,7 @@ class Present{
     game.presents.push(this);
     setPosition($element, this.x, this.y);
   }
-  
+
   destroy($container){
     $container.removeChild(this.$element);
     this.isDead = true;
