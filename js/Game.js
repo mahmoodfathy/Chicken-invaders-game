@@ -20,12 +20,10 @@ class Game {
   //initiates game
   init() {
     const $container = document.querySelector(".game");
-    // createPlayer($container); //this need the player class
+
     if (levels === 1) {
       player.create($container, "Images/player-blue-1.png");
     }
-
-    //this need the player class
 
     if (levels === 2) {
       ENEMIES_PER_ROW = 7;
@@ -41,7 +39,6 @@ class Game {
       next.innerText = "Restart";
       next.addEventListener("click", () => {
         window.location.reload();
-        // save_progress()
       });
     }
 
@@ -59,12 +56,3 @@ class Game {
     }
   }
 }
-// function createPlayer($container) {
-//   game.playerX = GAME_WIDTH / 2;
-//   game.playerY = GAME_HEIGHT - 50;
-//   const $player = document.createElement("img");
-//   $player.src = "Images/player-blue-1.png";
-//   $player.className = "player";
-//   $container.appendChild($player);
-//   setPosition($player, game.playerX, game.playerY);
-// }

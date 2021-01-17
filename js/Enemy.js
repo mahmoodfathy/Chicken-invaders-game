@@ -11,7 +11,6 @@ class Enemy {
     $element.className = "enemy";
     $container.appendChild($element);
 
-    //const enemy = new Enemy(x, y, $element); { ...this, $element }
     this.$element = $element;
     game.enemies.push(this); //array holds all the enemies
 
@@ -19,22 +18,19 @@ class Enemy {
   }
 
   destroy($container, enemy) {
-    //$container.removeChild(enemy.$element);
-
     const $explosion = document.createElement("img");
     $explosion.src = "Images/laser-red-8.png";
     $explosion.className = "explosion";
     $container.replaceChild($explosion, enemy.$element);
     $explosion.style.transform = enemy.$element.style.transform;
-    ///setPosition($explosion, enemy.x, enemy.y);
+
     enemy.isDead = true;
 
     const present = new Present(enemy.x, enemy.y);
     present.create($container);
 
     const audio = new Audio("sound/chicken-sound.mp3");
-    if(AUDIO)
-      audio.play();
+    if (AUDIO) audio.play();
     SCORE = SCORE + 1;
 
     setTimeout(() => {
