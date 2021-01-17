@@ -12,25 +12,24 @@
       <header>Space Game</header>
       <div class="game-wrapper">
         <div class="game">
-          <div id="info_wrapper" style="display: flex">
-            <div class="score">
-              <img
-                src="Images/chicken.png"
-                width="30px"
-                style="display: inline-block; flex: 0 0 10%"
-              />
-              <span id="score" style="display: inline-block">0</span>
-            </div>
-            <div class="lives">
-              <img src="Images/lives.webp" width="30px" style="display: inline-block; flex: 2"/>
-              <span id="lives" style="display: inline-block; color: red">3</span>
-            </div>
-            <div class="mute">
-              <img id="mute" src="Images/music-chicken.png" width="30px" style="display: inline-block; flex: 2"/>
-            </div>
+          <!-- <div id="info_wrapper" style="display: flex">
+          </div> -->
+          <div class="score">
+            <img src="Images/chicken.png" width="30px"/>
+            <span id="score">0</span>
           </div>
+
+          <div class="lives">
+            <img src="Images/lives.webp" width="30px"/>
+            <span id="lives" style="color: red;">3</span>
+          </div>
+
+          <div class="mute">
+            <img id="mute" src="Images/music-chicken.png" width="30px"/>
+          </div>
+
           <div id="restart" class="congratulations">
-            <h1>Congratulations!</h1>
+            <h1>Congratulatidons!</h1>
             <h2 class="score_modal"></h2>
             <img src="Images/won-chicken.png" width="300px" height="300px">
             <button class="btn" onclick="window.location.reload()">
@@ -38,7 +37,7 @@
             </button>
           </div>
           <div id="next-level" class="congratulations">
-            <h1>Congratulations!</h1>
+            <h1>Congratulatidons!</h1>
             <h2 class="score_modal"></h2>
             <img src="Images/won-chicken.png">
             <button id="next" class="btn">Next Level</button>
