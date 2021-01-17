@@ -36,11 +36,11 @@ function touch(r1, r2) {
   };
 }
 
-function save_player(){
+function save_progress(){
   pname =  localStorage.getItem(PLAYER_NAME);
 
   saved_players = JSON.parse(localStorage.getItem(PLAYERS_KEY) || "[]");
-  saved_players.sort((a, b) => (a.score> b.score) ? 1 : -1)
+  saved_players.sort((a, b) => (a.score < b.score) ? 1 : -1)
   // check if there are player and if the username already exists
   if(saved_players.length > 0){
     for(let i = 0; i<saved_players.length; i++){

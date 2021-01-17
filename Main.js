@@ -46,7 +46,7 @@ function update(e) {
     // document.querySelector(".congratulations").style.display = "block";
     document.querySelector("#next-level").style.display = "block";
     document.getElementsByClassName("score_modal")[1].innerHTML = "Your score: "+SCORE;
-    save_player()
+    save_progress()
     // levels++;
     return;
   }

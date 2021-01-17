@@ -1,15 +1,33 @@
 document.getElementById("game_btn").addEventListener("click", function(){
-    document.getElementById("leader_names").style.display = "block";
+  document.getElementById("leader_names").style.display = "block";
+  document.getElementById("backdrop_player").style.display = "block";
     // console.log("ASDASDASDASDJ");
   })
   document.getElementById("leaders_btn").addEventListener("click", function(){
-    check_player()
-    window.location.href = "game.html";
+    if(check_player() == -1)
+      return;
+      document.getElementById("backdrop_player").style.display = "none";
+      window.location.href = "game.html";
     document.getElementById("leader_names").style.display = "none";
 })
 
 function check_player(){
   pname =   document.getElementById("pname").value;
+  if(pname.length > 4){
+    document.getElementsByTagName("p")[0].textContent = "Name should be not more than 4 characters"
+    document.getElementById("leader_names").style.left = "30%";
+    return -1;
+  }
+  else if(pname.length == 0){
+    document.getElementsByTagName("p")[0].textContent = "Name should be not be empty"
+    document.getElementById("leader_names").style.left = "35%";
+    return -1;
+  }
+  else{
+    document.getElementsByTagName("p")[0].textContent = ""
+    document.getElementById("leader_names").style.left = "40%";
+  }
+
   localStorage.setItem(PLAYER_NAME, pname);
 
   saved_players = JSON.parse(localStorage.getItem(PLAYERS_KEY) || "[]");
@@ -23,7 +41,7 @@ function check_player(){
     }
   }
   else{
-    localStorage.setItem(PLAYERS_KEY, JSON.stringify([{name: pname, score: 0, level: 1}]));
+    localStorage.setItem(PLAYERS_KEY, JSON.stringify([{name: pname, score: 0, level: 0}]));
   }
 }
 
