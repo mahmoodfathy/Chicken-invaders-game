@@ -110,6 +110,22 @@ footer {
   z-index: 999;
 }
 
+#next-level img{
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#restart img{
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .game-over {
   display: none;
   position: absolute;
