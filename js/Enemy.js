@@ -31,17 +31,16 @@ class Enemy {
 
     const present = new Present(enemy.x, enemy.y);
     present.create($container);
-    
+
     const audio = new Audio("sound/chicken-sound.mp3");
     audio.play();
-    SCORE=SCORE+1;
+    SCORE = SCORE + 1;
 
     setTimeout(() => {
       //timer to remove explosion
       $container.removeChild($explosion);
     }, 5);
-    document.getElementById("score").innerText=SCORE; 
-
+    document.getElementById("score").innerText = SCORE;
   }
 }
 

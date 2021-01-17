@@ -3,7 +3,7 @@ class Player {
     game.playerX = GAME_WIDTH / 2;
     game.playerY = GAME_HEIGHT - 50;
     const $player = document.createElement("img");
-    $player.src = img;//"Images/player-blue-1.png";
+    $player.src = img; //"Images/player-blue-1.png";
     $player.className = "player";
     $container.appendChild($player);
     setPosition($player, game.playerX, game.playerY);
@@ -29,22 +29,24 @@ class Player {
     }
 
     const player = document.querySelector(".player");
+    // console.log(player);
+    // if (player === null) return;
     setPosition(player, game.playerX, game.playerY);
   }
 
   // here just checking if te player reached the boundries of the screen
   clamp(v, min, max) {
-    return v<min ? min : (v>max? max : v)
+    return v < min ? min : v > max ? max : v;
   }
 
   destroy(container, player) {
     container.removeChild(player);
-    game.gameOver = true;
+    // game.gameOver = true;
     const audio = new Audio("sound/chicken-sound.mp3");
     // audio.play();
   }
 
   won() {
-    return game.enemies.length === 0;
+    return game.enemies.length === 0 && game.presents.length == 0;
   }
 }

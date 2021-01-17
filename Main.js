@@ -1,7 +1,34 @@
 const game = new Game();
 const player = new Player();
+const nextLevel = document.querySelector("#next");
+const restart = document.querySelector("#restart");
+restart.style.display = "none";
 
-game.init(player);
+nextLevel.addEventListener("click", () => {
+  console.log("clicked");
+  levels++;
+
+  document.querySelector("#next-level").style.display = "none";
+  const container = document.querySelector(".game");
+  player.destroy(container, document.querySelector(".player"));
+  // const game2 = new Game();
+  game.init();
+  if (levels <= 3) {
+    window.requestAnimationFrame(update);
+  } else {
+    restart.style.display = "block";
+  }
+  // if (levels > 3) {
+  //   nextLevel.innerText = "Restart";
+  //   window.location.reload();
+  // }
+
+  // console.log(levels);
+  // window.location.reload();
+});
+
+game.init();
+// console.log(levels);
 
 function update(e) {
   const currentTime = Date.now();
@@ -9,11 +36,15 @@ function update(e) {
 
   if (game.gameOver) {
     document.querySelector(".game-over").style.display = "block";
+
     return;
   }
 
   if (player.won()) {
-    document.querySelector(".congratulations").style.display = "block";
+    // document.querySelector(".congratulations").style.display = "block";
+
+    document.querySelector("#next-level").style.display = "block";
+    // levels++;
     return;
   }
 
@@ -49,4 +80,5 @@ function onKeyUp(e) {
 
 window.addEventListener("keydown", onKeyDown);
 window.addEventListener("keyup", onKeyUp);
+
 window.requestAnimationFrame(update);
