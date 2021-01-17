@@ -179,13 +179,16 @@ footer {
 }
 
 /*aya*/
-
 .game .mute{
-  color: rgb(0, 183, 255);
-  width: 200px;
   height: 5px;  
   margin-left: 750px;
-  margin-top: 5px;
+  margin-top: 5px;/*without it player disappear*/
+}
+.game #mute_icon{
+  height: 5px;  
+  margin-left: 750px;
+  margin-top: -5px;/*without it player disappear*/
+  display: none;
 }
 
 .game .score{
@@ -206,25 +209,19 @@ footer {
   margin-top: 12px;
   margin-right: 10px;
 }
+.game .mute img,
+.game #mute_icon img,
+.game .lives img,
+.game .score img {
+  width: 30px;
+  height: 30px;
+}
 
-#lives #score {
+/* #lives #score {
   padding-bottom: 35px;
   border-bottom: 20px;
-}
-/* .game .lives {
-color: rgb(0, 183, 255);
-width: 200px;
-height: 5px;
 } */
-/* .game .lives img {
-margin-left: 20px;
-margin-top: 12px;
-margin-right: 10px;
-} */
-/* #lives {
-padding-bottom: 35px;
-border-bottom: 20px;
-} */
+
 
 /*MODAAAAL*/
 /* General Styles*/

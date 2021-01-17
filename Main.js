@@ -83,5 +83,17 @@ function onKeyUp(e) {
 
 window.addEventListener("keydown", onKeyDown);
 window.addEventListener("keyup", onKeyUp);
-document.getElementById("mute").addEventListener("click", function(){AUDIO = !AUDIO})
+document.getElementById("mute").addEventListener("click", function(){
+  AUDIO = !AUDIO
+  if(AUDIO)
+    document.getElementById("mute_icon").style.display = "none";
+  if(!AUDIO)
+    document.getElementById("mute_icon").style.display = "block";
+})
+document.getElementById("mute_icon").addEventListener("click", function(){
+  AUDIO = !AUDIO
+    document.getElementById("mute_icon").style.display = "none";
+})
 window.requestAnimationFrame(update);
+
+
