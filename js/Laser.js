@@ -27,8 +27,7 @@ class Laser {
     setPosition($element, this.x, this.y);
 
     const audio = new Audio("sound/sfx-laser1.ogg");
-    if(AUDIO)
-      audio.play();
+    if (AUDIO) audio.play();
   }
 
   //======================================================*//
@@ -92,15 +91,13 @@ function updateEnemyLasers(dt, containers) {
     const r1 = laser.$element.getBoundingClientRect();
     const $player = document.querySelector(".player");
     const r2 = $player.getBoundingClientRect();
-    // console.log(laser.$element);
-    //
+
     if (rectsIntersect(r1, r2)) {
       destroylasers(containers, laser);
       lives--;
 
       const audio = new Audio("sound/destroy.mp3");
-      if(AUDIO)
-        audio.play();
+      if (AUDIO) audio.play();
       document.getElementById("lives").innerHTML = lives;
 
       if (lives == 0) {
@@ -109,15 +106,6 @@ function updateEnemyLasers(dt, containers) {
         break;
       }
     }
-    // console.log(collideFlag);
-    // if (collideFlag) {
-    //   LIVES--;
-    // }
-    // if (rectsIntersect(r1, r2)) {
-    //   // player.destroy(containers, $player);
-
-    //   break;
-    // }
   }
   console.log(lives);
 

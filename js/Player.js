@@ -29,8 +29,7 @@ class Player {
     }
 
     const player = document.querySelector(".player");
-    // console.log(player);
-    // if (player === null) return;
+
     setPosition(player, game.playerX, game.playerY);
   }
 
@@ -41,9 +40,9 @@ class Player {
 
   destroy(container, player) {
     container.removeChild(player);
-    // game.gameOver = true;
+
     const audio = new Audio("sound/chicken-sound.mp3");
-    // audio.play();
+    audio.play();
   }
 
   won() {

@@ -1,36 +1,10 @@
-/* body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-} */
 body {
   text-align: center;
   background-color: #362c36;
   color: #f7f6f0;
   font: 100% Courier New, Courier, Verdana;
 }
-/* a {
-  color: #a7cbd5;
-} */
-/* caption {
-  font-size: 125%;
-  font-weight: 500;
-} */
-/* button,
-caption {
-  margin-bottom: 0.5em;
-} */
-/* button {
-  margin-left: 1em;
-  background-color: #8e8297;
-  border: none;
-  color: #f7f6f0;
-  padding: 5px;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-} */
+
 table {
   margin: auto;
   border-collapse: collapse;
@@ -45,10 +19,7 @@ table td,
 table th {
   border: 1px solid #f7f6f0;
 }
-/* table img {
-  width: 40px;
-  border-radius: 50%;
-} */
+
 table td {
   vertical-align: bottom;
 }
@@ -81,3 +52,26 @@ table a {
   z-index: 100;
 }
 
+.menu-button {
+  padding: 20px;
+  margin-top: 30px;
+  transition: all 0.4s ease;
+}
+.menu-button a {
+  padding: 20px;
+  color: #99b5e2;
+  font-size: 1.2em;
+  text-decoration: none;
+  background-color: #1c458b;
+  font-family: "Press Start 2P";
+
+  box-shadow: -7px 7px 4px 4px #99a5e2;
+}
+.menu-button a:hover {
+  padding: 20px;
+  color: #cddbf1;
+  text-decoration: none;
+  background-color: #3265ba;
+
+  box-shadow: 0px 2px 2px 2px #99a5e2;
+}
