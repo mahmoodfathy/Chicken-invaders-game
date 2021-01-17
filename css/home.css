@@ -216,7 +216,12 @@ img{
   z-index: 100;
 }
 
-
+#backdrop_player{
+  display: none;
+}
+p{
+  color: red;
+}
 #leader_names {
   display: none;
   position: absolute;
@@ -230,7 +235,12 @@ img{
 #leader_names p{
   font-size: small;
 }
-
+#leaders_btn{
+  border-radius: 20px; border: 0ch; width: 35px; height: 20px;
+}
+#pname{
+  border-radius: 20px;
+}
 
 @media(max-width: 700px){
   .rocket{

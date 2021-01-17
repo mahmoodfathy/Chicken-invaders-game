@@ -217,10 +217,6 @@ footer {
   height: 30px;
 }
 
-/* #lives #score {
-  padding-bottom: 35px;
-  border-bottom: 20px;
-} */
 
 
 /*MODAAAAL*/
@@ -296,4 +292,8 @@ footer {
 
 .open {
   display: block;
+}
+
+#lives{
+  color: red;
 }
