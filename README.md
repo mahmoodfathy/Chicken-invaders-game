@@ -19,6 +19,11 @@ destroy(container, player)
 Removes the player, the DOM element, from the screen after getting hit by the enemy weapon (eggs).
 
 ```
+clamp()
+```
+Prohibits the player from going outside the screen.
+
+```
 won()
 ```
 Returns true if all enemies are destroyed and no presents on the screen.
