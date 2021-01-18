@@ -153,7 +153,7 @@ won()
 Returns true if all enemies are destroyed and no presents on the screen.
 
 ```
-clamp()
+clamp(v,min,max)
 ```
 
 Keeps the player on the screen limits and force the player not to Exceed them
