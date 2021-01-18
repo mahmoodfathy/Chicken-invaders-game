@@ -1,7 +1,7 @@
 # Chicken Invaders Game
 
 ![Chicken-invaders](/Images/chicken.png)
-Gameplay | Leaderboard
+Gameplay :joystick: | Leaderboard :trophy:	
 :-------------------------:|:-------------------------:
 ![Instructions](/Images/Gameplay.gif) | ![Leader](Images/Leader.gif)
 
