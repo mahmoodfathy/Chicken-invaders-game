@@ -50,8 +50,17 @@ class Game {
       for (let i = 0; i < ENEMIES_PER_ROW; i++) {
         const x = i * enemySpacing + ENEMY_HORIZONTAL_PADDING;
         const enemy = new Enemy(x, y);
-        const src = "Images/chicken.png";
-        enemy.create($container, src); //needs the Player Class
+        var srcImg;
+        if(levels==1)
+          srcImg = "Images/level1_enemy-removebg-preview.png";
+        else if(levels==2)
+          srcImg = "Images/chicken.png";
+        else if(levels==3)
+          srcImg = "Images/chicken.png";
+
+        // const src = "Images/level1_enemy";
+
+        enemy.create($container, srcImg); //needs the Player Class
       }
     }
   }
