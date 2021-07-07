@@ -44,3 +44,8 @@ function check_player() {
     );
   }
 }
+
+document.getElementById("backdrop_player").addEventListener("click", function(){
+  document.getElementById("backdrop_player").style.display = "none"
+  document.getElementById("leader_names").style.display = "none"
+})

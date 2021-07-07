@@ -1,9 +1,9 @@
 class Player {
-  create($container, img) {
+  create($container, imgSrc) {
     game.playerX = GAME_WIDTH / 2;
     game.playerY = GAME_HEIGHT - 50;
     const $player = document.createElement("img");
-    $player.src = img; //"Images/player-blue-1.png";
+    $player.src = imgSrc; //"Images/player-blue-1.png";
     $player.className = "player";
     $container.appendChild($player);
     setPosition($player, game.playerX, game.playerY);

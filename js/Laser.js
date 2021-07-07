@@ -31,10 +31,10 @@ class Laser {
   }
 
   //======================================================*//
-  createEnemyLaser(containers) {
+  createEnemyLaser(containers, imgSrc) {
     if (ENEMY_X != 0) {
       const $element = document.createElement("img");
-      $element.src = "Images/egg.png";
+      $element.src = imgSrc;//"Images/egg.png";
       $element.className = "enemy-laser";
       this.$element = $element;
       containers.appendChild($element);

@@ -43,6 +43,13 @@ class Enemy {
 
 function updateEnemies(dt, $container) {
   //we sin and cos to make enemies move in a circular way
+  var srcImg;
+  if(levels==1)
+    srcImg = "Images/level1_laser-removebg-preview.png";
+  else if(levels==2)
+    srcImg = "Images/egg.png";
+  else if(levels==3)
+    srcImg = "Images/level1_enemy-removebg-preview.png";
 
   const dx = Math.sin(game.lastTime / 1000.0) * ENEMY_X;
   const dy = Math.cos(game.lastTime / 1000.0) * ENEMY_Y;
@@ -59,7 +66,7 @@ function updateEnemies(dt, $container) {
     if (enemy.cooldown <= 0) {
       //check if the laser cooled down
       const laser = new Laser(x, y);
-      laser.createEnemyLaser($container);
+      laser.createEnemyLaser($container, srcImg);
       //reset cooldown
       enemy.cooldown = ENEMY_COOLDOWN;
     }

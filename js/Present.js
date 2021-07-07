@@ -6,7 +6,12 @@ class Present {
 
   create($container) {
     const $element = document.createElement("img");
-    $element.src = "Images/fried-chicken.png";
+    if(levels ==1)
+      $element.src = "Images/level1_reward-removebg-preview.png";
+    else if(levels ==2)
+      $element.src = "Images/fried-chicken.png";
+    else if(levels ==3)
+      $element.src = "Images/fried-chicken.png";
     $element.className = "present";
     this.$element = $element;
     $container.appendChild($element);
